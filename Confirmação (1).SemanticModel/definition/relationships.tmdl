@@ -1,0 +1,10 @@
+relationship edaa9fc4-db9e-496a-94d8-d6980c23e3da
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Despesas.Data
+	toColumn: LocalDateTable_29bd8987-124c-42bb-bf9c-82734d938afd.Date
+
+relationship 10129a9a-9499-432b-8bcf-89fe7f1c6137
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Despesas.Data_Inclusao
+	toColumn: LocalDateTable_01f128b9-c699-4302-b0f1-9b3947a7d68a.Date
+

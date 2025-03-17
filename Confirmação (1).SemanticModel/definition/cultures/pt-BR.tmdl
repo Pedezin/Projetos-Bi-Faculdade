@@ -1,0 +1,4804 @@
+cultureInfo pt-BR
+
+	linguisticMetadata =
+			{
+			  "Version": "3.5.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "despesa": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "despesa": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.ID_atende": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "IDAtende"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ID atende": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "IDAtende": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "identification atende": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "identity atende": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "identifier atende": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "credential atende": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.data": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "Data"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "data": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        },
+			        {
+			          "information": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "fact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "info": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "statistic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "document": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "figure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "record": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "despesa.data.hierarquia_de_data": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "VariationSource": "Data",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Hierarquia de datas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "hierarquia de data": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "hierarquia de information": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "hierarquia de fact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "hierarquia de info": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "hierarquia de statistic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "hierarquia de document": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "hierarquia de figure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "hierarquia de record": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.data.ano": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "VariationSource": "Data",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Hierarquia de datas",
+			          "HierarchyLevel": "Ano"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ano": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "data ano": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "information ano": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "fact ano": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "info ano": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "statistic ano": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "document ano": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "figure ano": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "record ano": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.data.trimestre": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "VariationSource": "Data",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Hierarquia de datas",
+			          "HierarchyLevel": "Trimestre"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "trimestre": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "data trimestre": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "information trimestre": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "fact trimestre": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "info trimestre": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "statistic trimestre": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "document trimestre": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "figure trimestre": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "record trimestre": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.data.mê": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "VariationSource": "Data",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Hierarquia de datas",
+			          "HierarchyLevel": "Mês"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "mê": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "data mê": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "information mê": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "fact mê": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "info mê": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "statistic mê": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "document mê": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "figure mê": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "record mê": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.data.dia": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "VariationSource": "Data",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Hierarquia de datas",
+			          "HierarchyLevel": "Dia"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dia": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "data dia": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "information dia": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "fact dia": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "info dia": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "statistic dia": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "document dia": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "figure dia": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "record dia": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.hora": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "Hora"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "hora": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "time": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "despesa.nome": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "Nome"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nome": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.status": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "Status"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "status": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "category": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "importance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "prestige": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "prominence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "condition": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "class": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "grade": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "level": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "position": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.local_venda": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "Local Venda"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "local venda": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "venda": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.telefone": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "Telefone"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "telefone": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.celular": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "Celular"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "celular": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.tem_cadastro": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "Tem cadastro?"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tem cadastro?": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.tem_vendas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "Tem vendas?"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tem vendas?": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "tem venda?": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.responsável": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "Responsável"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "responsável": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.confirmado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "Confirmado?"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "confirmado?": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.email": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "Email"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "email": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "correspondence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "message": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "communication": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.nome_loja": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "Nome Loja"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nome loja": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "loja": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.endereço_loja": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "Endereço Loja"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "endereço loja": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.telefone_loja": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "Telefone Loja"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "telefone loja": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.telefone_loja_2": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "Telefone Loja 2"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "telefone loja 2": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.google_map": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "Google Maps"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "google map": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "google atlas": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "google chart": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "google plot": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "google plan": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "google record": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "google drawing": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "google diagram": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.frase": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "Frase"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "frase": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.data_inclusao": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "Data_Inclusao"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "data inclusao": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Data_Inclusao": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        },
+			        {
+			          "information inclusao": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "fact inclusao": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "info inclusao": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "statistic inclusao": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "document inclusao": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "figure inclusao": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "record inclusao": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "despesa.data_inclusao.hierarquia_de_data": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "VariationSource": "Data_Inclusao",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Hierarquia de datas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "hierarquia de data": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "hierarquia de information": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "hierarquia de fact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "hierarquia de info": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "hierarquia de statistic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "hierarquia de document": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "hierarquia de figure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "hierarquia de record": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.data_inclusao.ano": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "VariationSource": "Data_Inclusao",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Hierarquia de datas",
+			          "HierarchyLevel": "Ano"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ano": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "data inclusao ano": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "information inclusao ano": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "fact inclusao ano": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "info inclusao ano": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "statistic inclusao ano": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "document inclusao ano": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "figure inclusao ano": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "record inclusao ano": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.data_inclusao.trimestre": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "VariationSource": "Data_Inclusao",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Hierarquia de datas",
+			          "HierarchyLevel": "Trimestre"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "trimestre": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "data inclusao trimestre": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "information inclusao trimestre": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "fact inclusao trimestre": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "info inclusao trimestre": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "statistic inclusao trimestre": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "document inclusao trimestre": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "figure inclusao trimestre": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "record inclusao trimestre": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.data_inclusao.mê": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "VariationSource": "Data_Inclusao",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Hierarquia de datas",
+			          "HierarchyLevel": "Mês"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "mê": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "data inclusao mê": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "information inclusao mê": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "fact inclusao mê": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "info inclusao mê": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "statistic inclusao mê": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "document inclusao mê": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "figure inclusao mê": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "record inclusao mê": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.data_inclusao.dia": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "VariationSource": "Data_Inclusao",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Hierarquia de datas",
+			          "HierarchyLevel": "Dia"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dia": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "data inclusao dia": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "information inclusao dia": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "fact inclusao dia": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "info inclusao dia": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "statistic inclusao dia": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "document inclusao dia": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "figure inclusao dia": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "record inclusao dia": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.origem": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "Origem"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "origem": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.token_confirmacao": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "token_confirmacao"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "token confirmacao": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "token_confirmacao": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.token_cancelamento": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "token_cancelamento"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "token cancelamento": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "token_cancelamento": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.total_agenda": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "Total Agenda"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "total agenda": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "agenda": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "aggregate agenda": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "overall agenda": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "total schema": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "total memo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "schema": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "memo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "total program": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "total schedule": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "total plan": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "total outline": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.cont_confirmado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "CONFIRMADOS"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "confirmado": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.cont_reagendado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "CONT_REAGENDADOS"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cont reagendado": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "CONT_REAGENDADOS": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.cont_cancelado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "CANCELADO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cancelado": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.cont_sem_interacao": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "CONT_SEM_INTERACAO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cont sem interacao": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "CONT_SEM_INTERACAO": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.confirmados_total": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "SUM Confirmados Total"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "SUM confirmados total": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "sum confirmado aggregate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "sum confirmado overall": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "summation confirmado total": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "aggregation confirmado total": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "total confirmado total": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "aggregate confirmado total": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "amount confirmado total": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.agenda_total": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "SUM Agenda Total"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "SUM agenda total": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "agenda total": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "sum agenda aggregate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "sum agenda overall": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "agenda aggregate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "agenda overall": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "summation agenda total": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "aggregation agenda total": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "total agenda total": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "aggregate agenda total": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "amount agenda total": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "TOTAL": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.start_value": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "Start Value"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "start value": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "value": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "start assessment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "assessment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "start worth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "start price": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "start cost": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "start charge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "start rate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "worth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "price": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "cost": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.end_value": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "END VALUE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "end value": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "value": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "completion value": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "conclusion value": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "expiration value": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "close value": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "finish value": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "last value": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "stop value": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "closing value": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "ending value": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "end assessment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.target_confirmados": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "TARGET_CONFIRMADOS"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "target confirmados": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "TARGET_CONFIRMADOS": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "focus confirmado": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "goal confirmado": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "objective confirmado": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.range_2": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "RANGE 2"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "range 2": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.range_3": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "RANGE 3"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "range 3": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.conf_x_max": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "CONF X MAX"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "conf x max": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "conf x maximum": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "% Confirmados": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.medida": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "Medida"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "medida": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.sum_cancelado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "SUM CANCELADO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "sum cancelado": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "summation cancelado": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "aggregation cancelado": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "total cancelado": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "aggregate cancelado": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "amount cancelado": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.canc_x_max": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "CANC X MAX"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "canc x max": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "canc x maximum": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "% Cancelados": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.sum_reagendados": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "SUM REAGENDADOS"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "sum reagendados": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "summation reagendado": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "aggregation reagendado": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "total reagendado": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "aggregate reagendado": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "amount reagendado": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "despesa.reagend_x_max": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Despesas",
+			          "ConceptualProperty": "REAGEND X MAX"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "reagend x max": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "reagend x maximum": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "% Reagendados": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
+			    "despesa_data_inclusao_ano_has_despesa_data_inclusao_trimestre": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa.data_inclusao.ano": {
+			          "Target": {
+			            "Entity": "despesa.data_inclusao.ano"
+			          }
+			        },
+			        "despesa.data_inclusao.trimestre": {
+			          "Target": {
+			            "Entity": "despesa.data_inclusao.trimestre"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa.data_inclusao.ano"
+			            },
+			            "Object": {
+			              "Role": "despesa.data_inclusao.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "anos_have_trimestres"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa.data_inclusao.trimestre"
+			            },
+			            "Object": {
+			              "Role": "despesa.data_inclusao.ano"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "trimestres_have_anos"
+			        },
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "despesa.data_inclusao.trimestre"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "despesa.data_inclusao.ano"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "trimestres_are_in_anos1"
+			        }
+			      ]
+			    },
+			    "despesa_data_inclusao_hierarquia_de_data_has_despesa_data_inclusao_dia": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa.data_inclusao.hierarquia_de_data": {
+			          "Target": {
+			            "Entity": "despesa.data_inclusao.hierarquia_de_data"
+			          }
+			        },
+			        "despesa.data_inclusao.dia": {
+			          "Target": {
+			            "Entity": "despesa.data_inclusao.dia"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa.data_inclusao.hierarquia_de_data"
+			            },
+			            "Object": {
+			              "Role": "despesa.data_inclusao.dia"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "hierarquia_de_data_have_dias"
+			        }
+			      ]
+			    },
+			    "despesa_data_inclusao_hierarquia_de_data_has_despesa_data_inclusao_mê": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa.data_inclusao.hierarquia_de_data": {
+			          "Target": {
+			            "Entity": "despesa.data_inclusao.hierarquia_de_data"
+			          }
+			        },
+			        "despesa.data_inclusao.mê": {
+			          "Target": {
+			            "Entity": "despesa.data_inclusao.mê"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa.data_inclusao.hierarquia_de_data"
+			            },
+			            "Object": {
+			              "Role": "despesa.data_inclusao.mê"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "hierarquia_de_data_have_mê"
+			        }
+			      ]
+			    },
+			    "despesa_data_inclusao_hierarquia_de_data_has_despesa_data_inclusao_trimestre": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa.data_inclusao.hierarquia_de_data": {
+			          "Target": {
+			            "Entity": "despesa.data_inclusao.hierarquia_de_data"
+			          }
+			        },
+			        "despesa.data_inclusao.trimestre": {
+			          "Target": {
+			            "Entity": "despesa.data_inclusao.trimestre"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa.data_inclusao.hierarquia_de_data"
+			            },
+			            "Object": {
+			              "Role": "despesa.data_inclusao.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "hierarquia_de_data_have_trimestres"
+			        }
+			      ]
+			    },
+			    "despesa_data_inclusao_hierarquia_de_data_has_despesa_data_inclusao_ano": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa.data_inclusao.hierarquia_de_data": {
+			          "Target": {
+			            "Entity": "despesa.data_inclusao.hierarquia_de_data"
+			          }
+			        },
+			        "despesa.data_inclusao.ano": {
+			          "Target": {
+			            "Entity": "despesa.data_inclusao.ano"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa.data_inclusao.hierarquia_de_data"
+			            },
+			            "Object": {
+			              "Role": "despesa.data_inclusao.ano"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "hierarquia_de_data_have_anos"
+			        }
+			      ]
+			    },
+			    "despesa_data_inclusao_has_hierarquia_de_data": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa.data_inclusao": {
+			          "Target": {
+			            "Entity": "despesa.data_inclusao"
+			          }
+			        },
+			        "despesa.data_inclusao.hierarquia_de_data": {
+			          "Target": {
+			            "Entity": "despesa.data_inclusao.hierarquia_de_data"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa.data_inclusao"
+			            },
+			            "Object": {
+			              "Role": "despesa.data_inclusao.hierarquia_de_data"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_inclusaos_have_hierarquia_de_data"
+			        }
+			      ]
+			    },
+			    "despesa_data_mê_has_despesa_data_dia": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa.data.mê": {
+			          "Target": {
+			            "Entity": "despesa.data.mê"
+			          }
+			        },
+			        "despesa.data.dia": {
+			          "Target": {
+			            "Entity": "despesa.data.dia"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa.data.mê"
+			            },
+			            "Object": {
+			              "Role": "despesa.data.dia"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "mê_have_dias"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa.data.dia"
+			            },
+			            "Object": {
+			              "Role": "despesa.data.mê"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dias_have_mê"
+			        },
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "despesa.data.dia"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "despesa.data.mê"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dias_are_in_mê"
+			        }
+			      ]
+			    },
+			    "despesa_data_trimestre_has_despesa_data_mê": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa.data.trimestre": {
+			          "Target": {
+			            "Entity": "despesa.data.trimestre"
+			          }
+			        },
+			        "despesa.data.mê": {
+			          "Target": {
+			            "Entity": "despesa.data.mê"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa.data.trimestre"
+			            },
+			            "Object": {
+			              "Role": "despesa.data.mê"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "trimestres_have_mê"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa.data.mê"
+			            },
+			            "Object": {
+			              "Role": "despesa.data.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "mê_have_trimestres"
+			        },
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "despesa.data.mê"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "despesa.data.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "mê_are_in_trimestres"
+			        }
+			      ]
+			    },
+			    "despesa_data_ano_has_despesa_data_trimestre": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa.data.ano": {
+			          "Target": {
+			            "Entity": "despesa.data.ano"
+			          }
+			        },
+			        "despesa.data.trimestre": {
+			          "Target": {
+			            "Entity": "despesa.data.trimestre"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa.data.ano"
+			            },
+			            "Object": {
+			              "Role": "despesa.data.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "anos_have_trimestres1"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa.data.trimestre"
+			            },
+			            "Object": {
+			              "Role": "despesa.data.ano"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "trimestres_have_anos1"
+			        },
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "despesa.data.trimestre"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "despesa.data.ano"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "trimestres_are_in_anos"
+			        }
+			      ]
+			    },
+			    "despesa_data_hierarquia_de_data_has_despesa_data_dia": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa.data.hierarquia_de_data": {
+			          "Target": {
+			            "Entity": "despesa.data.hierarquia_de_data"
+			          }
+			        },
+			        "despesa.data.dia": {
+			          "Target": {
+			            "Entity": "despesa.data.dia"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa.data.hierarquia_de_data"
+			            },
+			            "Object": {
+			              "Role": "despesa.data.dia"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "hierarquia_de_data_have_dias1"
+			        }
+			      ]
+			    },
+			    "despesa_data_hierarquia_de_data_has_despesa_data_mê": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa.data.hierarquia_de_data": {
+			          "Target": {
+			            "Entity": "despesa.data.hierarquia_de_data"
+			          }
+			        },
+			        "despesa.data.mê": {
+			          "Target": {
+			            "Entity": "despesa.data.mê"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa.data.hierarquia_de_data"
+			            },
+			            "Object": {
+			              "Role": "despesa.data.mê"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "hierarquia_de_data_have_mê1"
+			        }
+			      ]
+			    },
+			    "despesa_data_hierarquia_de_data_has_despesa_data_trimestre": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa.data.hierarquia_de_data": {
+			          "Target": {
+			            "Entity": "despesa.data.hierarquia_de_data"
+			          }
+			        },
+			        "despesa.data.trimestre": {
+			          "Target": {
+			            "Entity": "despesa.data.trimestre"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa.data.hierarquia_de_data"
+			            },
+			            "Object": {
+			              "Role": "despesa.data.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "hierarquia_de_data_have_trimestres1"
+			        }
+			      ]
+			    },
+			    "despesa_data_hierarquia_de_data_has_despesa_data_ano": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa.data.hierarquia_de_data": {
+			          "Target": {
+			            "Entity": "despesa.data.hierarquia_de_data"
+			          }
+			        },
+			        "despesa.data.ano": {
+			          "Target": {
+			            "Entity": "despesa.data.ano"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa.data.hierarquia_de_data"
+			            },
+			            "Object": {
+			              "Role": "despesa.data.ano"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "hierarquia_de_data_have_anos1"
+			        }
+			      ]
+			    },
+			    "despesa_data_has_hierarquia_de_data": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa.data": {
+			          "Target": {
+			            "Entity": "despesa.data"
+			          }
+			        },
+			        "despesa.data.hierarquia_de_data": {
+			          "Target": {
+			            "Entity": "despesa.data.hierarquia_de_data"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa.data"
+			            },
+			            "Object": {
+			              "Role": "despesa.data.hierarquia_de_data"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_have_hierarquia_de_data"
+			        }
+			      ]
+			    },
+			    "despesa_has_reagend_x_max": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.reagend_x_max": {
+			          "Target": {
+			            "Entity": "despesa.reagend_x_max"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.reagend_x_max"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_reagend_x_max"
+			        }
+			      ]
+			    },
+			    "despesa_has_sum_reagendados": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.sum_reagendados": {
+			          "Target": {
+			            "Entity": "despesa.sum_reagendados"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.sum_reagendados"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_sum_reagendados"
+			        }
+			      ]
+			    },
+			    "despesa_has_canc_x_max": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.canc_x_max": {
+			          "Target": {
+			            "Entity": "despesa.canc_x_max"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.canc_x_max"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_canc_x_max"
+			        }
+			      ]
+			    },
+			    "despesa_has_sum_cancelado": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.sum_cancelado": {
+			          "Target": {
+			            "Entity": "despesa.sum_cancelado"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.sum_cancelado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_sum_cancelado"
+			        }
+			      ]
+			    },
+			    "despesa_has_medida": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.medida": {
+			          "Target": {
+			            "Entity": "despesa.medida"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.medida"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_medida"
+			        }
+			      ]
+			    },
+			    "despesa_has_conf_x_max": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.conf_x_max": {
+			          "Target": {
+			            "Entity": "despesa.conf_x_max"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.conf_x_max"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_conf_x_max"
+			        }
+			      ]
+			    },
+			    "despesa_has_range_3": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.range_3": {
+			          "Target": {
+			            "Entity": "despesa.range_3"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.range_3"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_range_3"
+			        }
+			      ]
+			    },
+			    "despesa_has_range_2": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.range_2": {
+			          "Target": {
+			            "Entity": "despesa.range_2"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.range_2"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_range_2"
+			        }
+			      ]
+			    },
+			    "despesa_has_target_confirmados": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.target_confirmados": {
+			          "Target": {
+			            "Entity": "despesa.target_confirmados"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.target_confirmados"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_target_confirmados"
+			        }
+			      ]
+			    },
+			    "despesa_has_end_value": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.end_value": {
+			          "Target": {
+			            "Entity": "despesa.end_value"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.end_value"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_end_value"
+			        }
+			      ]
+			    },
+			    "despesa_has_start_value": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.start_value": {
+			          "Target": {
+			            "Entity": "despesa.start_value"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.start_value"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_start_value"
+			        }
+			      ]
+			    },
+			    "despesa_has_agenda_total": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.agenda_total": {
+			          "Target": {
+			            "Entity": "despesa.agenda_total"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.agenda_total"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_SUM_agenda_total"
+			        }
+			      ]
+			    },
+			    "despesa_has_confirmados_total": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.confirmados_total": {
+			          "Target": {
+			            "Entity": "despesa.confirmados_total"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.confirmados_total"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_SUM_confirmados_total"
+			        }
+			      ]
+			    },
+			    "despesa_has_cont_sem_interacao": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.cont_sem_interacao": {
+			          "Target": {
+			            "Entity": "despesa.cont_sem_interacao"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.cont_sem_interacao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_cont_sem_interacaos"
+			        }
+			      ]
+			    },
+			    "despesa_has_cont_cancelado": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.cont_cancelado": {
+			          "Target": {
+			            "Entity": "despesa.cont_cancelado"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.cont_cancelado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_cancelados"
+			        }
+			      ]
+			    },
+			    "despesa_has_cont_reagendado": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.cont_reagendado": {
+			          "Target": {
+			            "Entity": "despesa.cont_reagendado"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.cont_reagendado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_cont_reagendados"
+			        }
+			      ]
+			    },
+			    "despesa_has_total_agenda": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.total_agenda": {
+			          "Target": {
+			            "Entity": "despesa.total_agenda"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.total_agenda"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_total_agendas"
+			        }
+			      ]
+			    },
+			    "despesa_has_token_cancelamento": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.token_cancelamento": {
+			          "Target": {
+			            "Entity": "despesa.token_cancelamento"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.token_cancelamento"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_token_cancelamentos"
+			        }
+			      ]
+			    },
+			    "despesa_has_token_confirmacao": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.token_confirmacao": {
+			          "Target": {
+			            "Entity": "despesa.token_confirmacao"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.token_confirmacao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_token_confirmacaos"
+			        }
+			      ]
+			    },
+			    "despesa_has_origem": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.origem": {
+			          "Target": {
+			            "Entity": "despesa.origem"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.origem"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_origems"
+			        }
+			      ]
+			    },
+			    "despesa_has_data_inclusao": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.data_inclusao": {
+			          "Target": {
+			            "Entity": "despesa.data_inclusao"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.data_inclusao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_data_inclusaos"
+			        }
+			      ]
+			    },
+			    "despesa_has_frase": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.frase": {
+			          "Target": {
+			            "Entity": "despesa.frase"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.frase"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_frases"
+			        }
+			      ]
+			    },
+			    "despesa_has_google_map": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.google_map": {
+			          "Target": {
+			            "Entity": "despesa.google_map"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.google_map"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_google_maps"
+			        }
+			      ]
+			    },
+			    "despesa_has_telefone_loja_2": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.telefone_loja_2": {
+			          "Target": {
+			            "Entity": "despesa.telefone_loja_2"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.telefone_loja_2"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_telefone_loja_2"
+			        }
+			      ]
+			    },
+			    "despesa_has_telefone_loja": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.telefone_loja": {
+			          "Target": {
+			            "Entity": "despesa.telefone_loja"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.telefone_loja"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_telefone_loja"
+			        }
+			      ]
+			    },
+			    "despesa_has_endereço_loja": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.endereço_loja": {
+			          "Target": {
+			            "Entity": "despesa.endereço_loja"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.endereço_loja"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_endereço_loja"
+			        }
+			      ]
+			    },
+			    "despesa_has_nome_loja": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.nome_loja": {
+			          "Target": {
+			            "Entity": "despesa.nome_loja"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.nome_loja"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_nome_loja"
+			        }
+			      ]
+			    },
+			    "despesa_has_email": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.email": {
+			          "Target": {
+			            "Entity": "despesa.email"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.email"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_emails"
+			        }
+			      ]
+			    },
+			    "despesa_has_confirmado": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.confirmado": {
+			          "Target": {
+			            "Entity": "despesa.confirmado"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.confirmado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_confirmado"
+			        }
+			      ]
+			    },
+			    "despesa_has_responsável": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.responsável": {
+			          "Target": {
+			            "Entity": "despesa.responsável"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.responsável"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_responsávels"
+			        }
+			      ]
+			    },
+			    "despesa_has_tem_vendas": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.tem_vendas": {
+			          "Target": {
+			            "Entity": "despesa.tem_vendas"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.tem_vendas"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_tem_vendas"
+			        }
+			      ]
+			    },
+			    "despesa_has_tem_cadastro": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.tem_cadastro": {
+			          "Target": {
+			            "Entity": "despesa.tem_cadastro"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.tem_cadastro"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_tem_cadastro"
+			        }
+			      ]
+			    },
+			    "despesa_has_celular": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.celular": {
+			          "Target": {
+			            "Entity": "despesa.celular"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.celular"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_celulars"
+			        }
+			      ]
+			    },
+			    "despesa_has_telefone": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.telefone": {
+			          "Target": {
+			            "Entity": "despesa.telefone"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.telefone"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_telefones"
+			        }
+			      ]
+			    },
+			    "despesa_has_local_venda": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.local_venda": {
+			          "Target": {
+			            "Entity": "despesa.local_venda"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.local_venda"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_local_venda"
+			        }
+			      ]
+			    },
+			    "despesa_has_status": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.status": {
+			          "Target": {
+			            "Entity": "despesa.status"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.status"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_statuses"
+			        }
+			      ]
+			    },
+			    "despesa_has_nome": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.nome": {
+			          "Target": {
+			            "Entity": "despesa.nome"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.nome"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_nome"
+			        }
+			      ]
+			    },
+			    "despesa_has_hora": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.hora": {
+			          "Target": {
+			            "Entity": "despesa.hora"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.hora"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_horas"
+			        }
+			      ]
+			    },
+			    "despesa_has_data": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.data": {
+			          "Target": {
+			            "Entity": "despesa.data"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.data"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_data"
+			        }
+			      ]
+			    },
+			    "despesa_has_ID_atende": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa": {
+			          "Target": {
+			            "Entity": "despesa"
+			          }
+			        },
+			        "despesa.ID_atende": {
+			          "Target": {
+			            "Entity": "despesa.ID_atende"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa"
+			            },
+			            "Object": {
+			              "Role": "despesa.ID_atende"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "despesas_have_ID_atendes"
+			        }
+			      ]
+			    },
+			    "despesa_data_inclusao_trimestre_has_despesa_data_inclusao_mê": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa.data_inclusao.trimestre": {
+			          "Target": {
+			            "Entity": "despesa.data_inclusao.trimestre"
+			          }
+			        },
+			        "despesa.data_inclusao.mê": {
+			          "Target": {
+			            "Entity": "despesa.data_inclusao.mê"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa.data_inclusao.trimestre"
+			            },
+			            "Object": {
+			              "Role": "despesa.data_inclusao.mê"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "trimestres_have_mê1"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa.data_inclusao.mê"
+			            },
+			            "Object": {
+			              "Role": "despesa.data_inclusao.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "mê_have_trimestres1"
+			        },
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "despesa.data_inclusao.mê"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "despesa.data_inclusao.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "mê_are_in_trimestres1"
+			        }
+			      ]
+			    },
+			    "despesa_data_inclusao_mê_has_despesa_data_inclusao_dia": {
+			      "Binding": {
+			        "ConceptualEntity": "Despesas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "despesa.data_inclusao.mê": {
+			          "Target": {
+			            "Entity": "despesa.data_inclusao.mê"
+			          }
+			        },
+			        "despesa.data_inclusao.dia": {
+			          "Target": {
+			            "Entity": "despesa.data_inclusao.dia"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa.data_inclusao.mê"
+			            },
+			            "Object": {
+			              "Role": "despesa.data_inclusao.dia"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "mê_have_dias1"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "despesa.data_inclusao.dia"
+			            },
+			            "Object": {
+			              "Role": "despesa.data_inclusao.mê"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dias_have_mê1"
+			        },
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "despesa.data_inclusao.dia"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "despesa.data_inclusao.mê"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dias_are_in_mê1"
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

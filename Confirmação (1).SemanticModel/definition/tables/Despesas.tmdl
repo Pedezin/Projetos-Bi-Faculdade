@@ -1,0 +1,338 @@
+table Despesas
+	lineageTag: 0ea96a25-f084-4bdf-9586-9cb4751b1e89
+
+	measure 'SUM Confirmados Total' = SUM(Despesas[CONFIRMADOS])
+		formatString: 0
+		lineageTag: 0e8ca520-8447-4de7-bc80-11afead0a318
+
+	measure 'SUM Agenda Total' = SUM(Despesas[Total Agenda])
+		formatString: 0
+		lineageTag: 06787755-2ace-49ac-b99d-f26926041e3d
+
+	measure 'Start Value' = 0
+		formatString: 0
+		lineageTag: e9c28c5b-e939-4ebf-acf8-614910b2d20a
+
+	measure 'END VALUE' = 100
+		formatString: 0
+		lineageTag: da1b6db4-cd05-4afd-a73a-ee817eed52b8
+
+	measure TARGET_CONFIRMADOS = [SUM Confirmados Total]/ [SUM Agenda Total]
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: bc8f2354-c73a-4cf0-bc0e-8d8449bfd04a
+
+	measure 'RANGE 2' = 70
+		formatString: 0
+		lineageTag: c41dce2d-27b7-4625-a8c6-adfcd8cfab08
+
+	measure 'RANGE 3' = 90
+		formatString: 0
+		lineageTag: 810c1474-ba9a-4ff6-a637-238258c8e7a6
+
+	measure 'CONF X MAX' = [SUM Confirmados Total]/[SUM Agenda Total]*100
+		lineageTag: bbcf6213-7eb4-4964-8285-9985a43a01b8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Medida = SUM(Despesas[CANCELADO])
+		formatString: 0
+		lineageTag: dca07bdc-5486-40b6-bd31-4a9459be653d
+
+	measure 'SUM CANCELADO' = SUM(Despesas[CANCELADO])
+		formatString: 0
+		lineageTag: b16c4dde-c87a-45f4-a20a-ce4966ffc165
+
+	measure 'CANC X MAX' = [SUM CANCELADO]/[SUM Agenda Total]*100
+		lineageTag: aa1db7c3-da35-4d9b-bab2-d46594f8b900
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'SUM REAGENDADOS' = SUM(Despesas[CONT_REAGENDADOS])
+		formatString: 0
+		lineageTag: 9ece3ec3-20e4-4581-96f3-b3d1aad17538
+
+	measure 'REAGEND X MAX' = [SUM REAGENDADOS]/[SUM Agenda Total]*100
+		lineageTag: 31ce9146-205d-485b-87f1-a5dc364c6025
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IDAtende
+		dataType: int64
+		formatString: 0
+		lineageTag: 9b74fc0b-cdca-495e-bb25-e2f5b73d8194
+		summarizeBy: sum
+		sourceColumn: IDAtende
+
+		annotation SummarizationSetBy = Automatic
+
+	column Data
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: cb72e38e-a5db-4a2c-bcfa-84774797e1cf
+		summarizeBy: none
+		sourceColumn: Data
+
+		variation Variation
+			isDefault
+			relationship: edaa9fc4-db9e-496a-94d8-d6980c23e3da
+			defaultHierarchy: LocalDateTable_29bd8987-124c-42bb-bf9c-82734d938afd.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Hora
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 01eb73f5-ebce-46a4-89ce-d5d39518a52d
+		summarizeBy: none
+		sourceColumn: Hora
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column Nome
+		dataType: string
+		lineageTag: 9e6c26dd-53bd-43a2-aa33-aa2c334cfb05
+		summarizeBy: none
+		sourceColumn: Nome
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 3a1fefd5-7b69-4577-946a-154589f39452
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Local Venda'
+		dataType: string
+		lineageTag: 41bed7c6-f806-405c-9c73-dfc326c1d2c9
+		summarizeBy: none
+		sourceColumn: Local Venda
+
+		annotation SummarizationSetBy = Automatic
+
+	column Telefone
+		dataType: double
+		formatString: 0
+		lineageTag: f077a5af-90ec-4883-b9b7-ff37b3b4ff6d
+		summarizeBy: sum
+		sourceColumn: Telefone
+
+		annotation SummarizationSetBy = Automatic
+
+	column Celular
+		dataType: int64
+		formatString: 0
+		lineageTag: a1d139e6-bb1d-43a1-815e-a885fc444826
+		summarizeBy: sum
+		sourceColumn: Celular
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tem cadastro?'
+		dataType: string
+		lineageTag: 0f4d7c16-a042-44a4-8d8e-96eeb6e3fa03
+		summarizeBy: none
+		sourceColumn: Tem cadastro?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tem vendas?'
+		dataType: string
+		lineageTag: e5f4664c-cf31-4d52-b2cb-b13230d495a2
+		summarizeBy: none
+		sourceColumn: Tem vendas?
+
+		annotation SummarizationSetBy = Automatic
+
+	column Responsável
+		dataType: string
+		lineageTag: d9024dec-8e0f-4afc-a0e9-5056e1ccd5d5
+		summarizeBy: none
+		sourceColumn: Responsável
+
+		annotation SummarizationSetBy = Automatic
+
+	column Confirmado?
+		dataType: string
+		lineageTag: 0aa148ea-958e-49f8-8f2a-dd3abbf7c258
+		summarizeBy: none
+		sourceColumn: Confirmado?
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: 6e41dfe5-2d38-4239-8a26-15962630e651
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome Loja'
+		dataType: string
+		lineageTag: 4e42b478-13ef-41b3-adda-ed98047a9f65
+		summarizeBy: none
+		sourceColumn: Nome Loja
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Endereço Loja'
+		dataType: string
+		lineageTag: fae15361-5184-4c4a-93ee-2e840a0efd55
+		summarizeBy: none
+		sourceColumn: Endereço Loja
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Telefone Loja'
+		dataType: int64
+		formatString: 0
+		lineageTag: a1155866-61d7-4fc1-b57d-4585ada73b66
+		summarizeBy: sum
+		sourceColumn: Telefone Loja
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Telefone Loja 2'
+		dataType: string
+		lineageTag: df335f64-a41e-4246-91e0-8f7caa008ac1
+		summarizeBy: none
+		sourceColumn: Telefone Loja 2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Google Maps'
+		dataType: string
+		lineageTag: fa0ef6bb-6847-4ffa-9cf3-ad1b037c6fa4
+		summarizeBy: none
+		sourceColumn: Google Maps
+
+		annotation SummarizationSetBy = Automatic
+
+	column Frase
+		dataType: string
+		lineageTag: 5673fb80-1a7e-4f6a-b905-e4b54e31deea
+		summarizeBy: none
+		sourceColumn: Frase
+
+		annotation SummarizationSetBy = Automatic
+
+	column Data_Inclusao
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 695e53e3-ee61-48fa-aea7-86ff82059af5
+		summarizeBy: none
+		sourceColumn: Data_Inclusao
+
+		variation Variation
+			isDefault
+			relationship: 10129a9a-9499-432b-8bcf-89fe7f1c6137
+			defaultHierarchy: LocalDateTable_01f128b9-c699-4302-b0f1-9b3947a7d68a.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Origem
+		dataType: string
+		lineageTag: 87ce264f-4021-452e-9a45-39178cfe01c8
+		summarizeBy: none
+		sourceColumn: Origem
+
+		annotation SummarizationSetBy = Automatic
+
+	column token_confirmacao
+		dataType: string
+		lineageTag: 1d059013-f3ef-4c21-8166-9a8cefa750c2
+		summarizeBy: none
+		sourceColumn: token_confirmacao
+
+		annotation SummarizationSetBy = Automatic
+
+	column token_cancelamento
+		dataType: string
+		lineageTag: 2b926968-8dfe-4009-aed4-1916fee2c507
+		summarizeBy: none
+		sourceColumn: token_cancelamento
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Agenda'
+		dataType: int64
+		formatString: 0
+		lineageTag: feaceedb-e7b3-43ba-b090-bccdfc810464
+		summarizeBy: sum
+		sourceColumn: Total Agenda
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONFIRMADOS
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: a02672d4-3fce-4764-8432-8b4c9a812c26
+		summarizeBy: sum
+		sourceColumn: CONFIRMADOS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONT_REAGENDADOS
+		dataType: int64
+		formatString: 0
+		lineageTag: 5b35e30d-0989-4061-b595-261ce0594ebd
+		summarizeBy: sum
+		sourceColumn: CONT_REAGENDADOS
+
+		annotation SummarizationSetBy = Automatic
+
+	column CANCELADO
+		dataType: int64
+		formatString: 0
+		lineageTag: 645ff9b1-a19e-45ce-b6bd-63b4de1cba5c
+		summarizeBy: sum
+		sourceColumn: CANCELADO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONT_SEM_INTERACAO
+		dataType: int64
+		formatString: 0
+		lineageTag: faa0b14a-7d88-426a-a97e-546174e5f375
+		summarizeBy: sum
+		sourceColumn: CONT_SEM_INTERACAO
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Despesas = m
+		mode: import
+		source =
+				let
+				    Fonte = Excel.Workbook(File.Contents("C:\Users\r4108347\Downloads\Analystic.xlsx"), null, true),
+				    Despesas_Sheet = Fonte{[Item="Despesas",Kind="Sheet"]}[Data],
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Despesas_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"IDAtende", Int64.Type}, {"Data", type date}, {"Hora", type time}, {"Nome", type text}, {"Status", type text}, {"Local Venda", type text}, {"Telefone", Int64.Type}, {"Celular", Int64.Type}, {"Tem cadastro?", type text}, {"Tem vendas?", type text}, {"Responsável", type text}, {"Confirmado?", type text}, {"Email", type text}, {"Nome Loja", type text}, {"Endereço Loja", type text}, {"Telefone Loja", Int64.Type}, {"Telefone Loja 2", type text}, {"Google Maps", type text}, {"Frase", type text}, {"Data_Inclusao", type datetime}, {"Origem", type text}, {"token_confirmacao", type text}, {"token_cancelamento", type text}}),
+				    #"Valor Substituído" = Table.ReplaceValue(#"Tipo Alterado",null,0,Replacer.ReplaceValue,{"Telefone"}),
+				    #"Coluna Condicional Adicionada" = Table.AddColumn(#"Valor Substituído", "agenda_total", each if [Data] = #date(2025, 3, 17) then 1 else 0),
+				    #"Tipo Alterado1" = Table.TransformColumnTypes(#"Coluna Condicional Adicionada",{{"agenda_total", Int64.Type}}),
+				    #"Coluna Condicional Adicionada1" = Table.AddColumn(#"Tipo Alterado1", "CONT_CONFIRMADOS", each if [#"Confirmado?"] = "CONFIRMADO" then 1 else 0),
+				    #"Tipo Alterado2" = Table.TransformColumnTypes(#"Coluna Condicional Adicionada1",{{"CONT_CONFIRMADOS", Int64.Type}}),
+				    #"Coluna Condicional Adicionada2" = Table.AddColumn(#"Tipo Alterado2", "CONT_REAGENDADOS", each if [Status] = "REAGENDADO" then 1 else 0),
+				    #"Coluna Condicional Adicionada3" = Table.AddColumn(#"Coluna Condicional Adicionada2", "Personalizar", each if [Status] = "CANCELADO" then 1 else 0),
+				    #"Colunas Renomeadas" = Table.RenameColumns(#"Coluna Condicional Adicionada3",{{"Personalizar", "CONT_CANCELADO"}, {"agenda_total", "CONT_AGENDA_TOTAL"}}),
+				    #"Coluna Condicional Adicionada4" = Table.AddColumn(#"Colunas Renomeadas", "CONT_SEM_INTERACAO", each if [Status] = "AGENDADO" then 1 else if [Status] = "AGENDAMENTO" then 1 else 0),
+				    #"Colunas Renomeadas1" = Table.RenameColumns(#"Coluna Condicional Adicionada4",{{"CONT_AGENDA_TOTAL", "Total Agenda"}}),
+				    #"Tipo Alterado3" = Table.TransformColumnTypes(#"Colunas Renomeadas1",{{"CONT_SEM_INTERACAO", Int64.Type}, {"CONT_REAGENDADOS", Int64.Type}, {"CONT_CANCELADO", Int64.Type}}),
+				    #"Colunas Renomeadas2" = Table.RenameColumns(#"Tipo Alterado3",{{"CONT_CANCELADO", "CANCELADO"}, {"CONT_CONFIRMADOS", "CONFIRMADOS"}})
+				in
+				    #"Colunas Renomeadas2"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+
