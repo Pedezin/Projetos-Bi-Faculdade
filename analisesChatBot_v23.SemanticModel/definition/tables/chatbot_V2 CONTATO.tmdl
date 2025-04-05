@@ -1,0 +1,42 @@
+table 'chatbot_V2 CONTATO'
+	lineageTag: 446af863-1ee9-48fb-bf78-229366479028
+
+	column TELEFONE
+		dataType: int64
+		formatString: 0
+		lineageTag: aaa5bf6e-8e30-4868-a142-34c7862b102d
+		summarizeBy: none
+		sourceColumn: TELEFONE
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOME_CLIENTE
+		dataType: string
+		lineageTag: 93248d27-99ea-4cf0-ae23-8394ac8a1898
+		summarizeBy: none
+		sourceColumn: NOME_CLIENTE
+
+		annotation SummarizationSetBy = Automatic
+
+	column GENERO
+		dataType: string
+		lineageTag: f3b0e181-840f-4032-b02f-148d6a6ead94
+		summarizeBy: none
+		sourceColumn: GENERO
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'chatbot_V2 CONTATO' = m
+		mode: import
+		source =
+				let
+				    Fonte = MySQL.Database("ls-a04f607f671036498978461f305b5a1f06f691d7.ckr1nz432eyx.us-east-2.rds.amazonaws.com", "chatbot_V2", [ReturnSingleDatabase=true, Query="SELECT * FROM CONTATO WHERE TELEFONE NOT IN (9223372036854775807)"]),
+				    #"Valor Substituído" = Table.ReplaceValue(Fonte,null,"I",Replacer.ReplaceValue,{"GENERO"}),
+				    #"Valor Substituído1" = Table.ReplaceValue(#"Valor Substituído","n","I",Replacer.ReplaceText,{"GENERO"})
+				in
+				    #"Valor Substituído1"
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navegação
+

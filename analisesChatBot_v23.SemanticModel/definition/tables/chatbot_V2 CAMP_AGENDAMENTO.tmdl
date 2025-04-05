@@ -1,0 +1,65 @@
+table 'chatbot_V2 CAMP_AGENDAMENTO'
+	lineageTag: b4aa026e-a36c-4a0b-af1c-b14b4c8cae88
+
+	column TELEFONE
+		dataType: int64
+		formatString: 0
+		lineageTag: 37571dd7-164b-4fb0-9958-14479b0ee656
+		summarizeBy: none
+		sourceColumn: TELEFONE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_AGENDAMENTO
+		dataType: string
+		lineageTag: 1b6f5abc-f126-4934-9847-e9cc86943f65
+		summarizeBy: none
+		sourceColumn: ID_AGENDAMENTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATA
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ee175add-58c3-4d41-9dfb-552faca4ff66
+		summarizeBy: none
+		sourceColumn: DATA
+
+		variation Variation
+			isDefault
+			relationship: eb3b861c-52c1-4eb9-9b1d-637feb98534a
+			defaultHierarchy: LocalDateTable_601ea21f-32bd-4415-98a7-50084e609d31.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column UNIDADE_PSD
+		dataType: string
+		lineageTag: c1d89b34-d244-4203-8ea0-cf813fd47516
+		summarizeBy: none
+		sourceColumn: UNIDADE_PSD
+
+		annotation SummarizationSetBy = Automatic
+
+	column HORARIO
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: a1011284-ce1f-407d-bccd-34a3ba7e011d
+		summarizeBy: none
+		sourceColumn: HORARIO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	partition 'chatbot_V2 CAMP_AGENDAMENTO' = m
+		mode: import
+		source =
+				let
+				    Fonte = MySQL.Database("ls-a04f607f671036498978461f305b5a1f06f691d7.ckr1nz432eyx.us-east-2.rds.amazonaws.com", "chatbot_V2", [ReturnSingleDatabase=true, Query="SELECT * FROM CAMP_AGENDAMENTO WHERE TELEFONE NOT IN (9223372036854775807)"])
+				in
+				    Fonte
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+

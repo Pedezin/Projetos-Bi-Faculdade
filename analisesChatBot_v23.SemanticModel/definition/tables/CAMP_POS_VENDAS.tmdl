@@ -1,0 +1,110 @@
+table CAMP_POS_VENDAS
+	lineageTag: dcea4ff7-c62b-4153-a1a9-6136d86051ca
+
+	column TELEFONE
+		dataType: int64
+		formatString: 0
+		lineageTag: f18ba724-95ee-4847-945f-c0579f2ab1a1
+		summarizeBy: none
+		sourceColumn: TELEFONE
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOME_CLIENTE
+		dataType: string
+		lineageTag: 075e6354-0393-4152-aeef-8533f82d2974
+		summarizeBy: none
+		sourceColumn: NOME_CLIENTE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATA_COMPRA
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 38fa4931-1c57-43e0-97df-835f1c4c10c2
+		summarizeBy: none
+		sourceColumn: DATA_COMPRA
+
+		variation Variation
+			isDefault
+			relationship: c7f6ecf9-cc8b-4735-873e-7b9d16e5a1e1
+			defaultHierarchy: LocalDateTable_2f3c7c7f-52eb-4aa2-af78-66e0c487b0c2.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column DOR_PRINCIPAL
+		dataType: string
+		lineageTag: 7543fd86-ca0d-4e46-9b21-c4b4024abb27
+		summarizeBy: none
+		sourceColumn: DOR_PRINCIPAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column UNIDADE_SIGLA
+		dataType: string
+		lineageTag: 2eedd44e-b88a-49fb-9507-428e5eb20ed3
+		summarizeBy: none
+		sourceColumn: UNIDADE_SIGLA
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOME_ESPECIALISTA
+		dataType: string
+		lineageTag: 43651f77-84b3-4f36-9883-e86d82b3ac8f
+		summarizeBy: none
+		sourceColumn: NOME_ESPECIALISTA
+
+		annotation SummarizationSetBy = Automatic
+
+	column RASTREIO
+		dataType: string
+		lineageTag: f848d0cd-aa9e-4954-8292-0719c5461ec0
+		summarizeBy: none
+		sourceColumn: RASTREIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_AVALIACAO
+		dataType: string
+		lineageTag: f071539f-03c7-424d-a32d-317617391777
+		summarizeBy: none
+		sourceColumn: ID_AVALIACAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_CADASTRO
+		dataType: string
+		lineageTag: e65dfdb4-abaa-4b0b-b502-027db6cc4d68
+		summarizeBy: none
+		sourceColumn: ID_CADASTRO
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_PEDIDO
+		dataType: string
+		lineageTag: f873164a-2b0d-4602-b588-4c8639cc75f4
+		summarizeBy: none
+		sourceColumn: ID_PEDIDO
+
+		annotation SummarizationSetBy = Automatic
+
+	column ENDERECO
+		dataType: string
+		lineageTag: 4935f7cc-2f3e-4e8d-a91c-9a0614b7d2b6
+		summarizeBy: none
+		sourceColumn: ENDERECO
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CAMP_POS_VENDAS = m
+		mode: import
+		source =
+				let
+				    Fonte = MySQL.Database("ls-a04f607f671036498978461f305b5a1f06f691d7.ckr1nz432eyx.us-east-2.rds.amazonaws.com:3306", "chatbot_V2", [ReturnSingleDatabase=true, Query="SELECT * FROM CAMP_POS_VENDAS;", CreateNavigationProperties=false])
+				in
+				    Fonte
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+

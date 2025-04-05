@@ -1,0 +1,141 @@
+table 'chatbot_V2 HSM'
+	lineageTag: 9b9b5b89-5a51-49a0-82ca-026b936b383c
+
+	column ID_HSM
+		dataType: string
+		lineageTag: 7b7c7bdd-6b02-46a5-8932-d274fe2a2acc
+		summarizeBy: none
+		sourceColumn: ID_HSM
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONTEUDO
+		dataType: string
+		lineageTag: 69735db9-0d8b-4365-9822-5dedd0e61d58
+		summarizeBy: none
+		sourceColumn: CONTEUDO
+
+		annotation SummarizationSetBy = Automatic
+
+	column MESSAGE_PAYLOAD
+		dataType: string
+		lineageTag: 7dcaba48-3ec5-4569-9393-ba58f77522cc
+		summarizeBy: none
+		sourceColumn: MESSAGE_PAYLOAD
+
+		annotation SummarizationSetBy = Automatic
+
+	column ATIVO
+		dataType: int64
+		formatString: 0
+		lineageTag: 97cab5d7-9aa3-4ed5-b0c7-2407fbfc7d82
+		summarizeBy: sum
+		sourceColumn: ATIVO
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_CAMPANHA
+		dataType: int64
+		formatString: 0
+		lineageTag: 13147e5f-9931-4dae-9cc9-adc1735584b6
+		summarizeBy: sum
+		sourceColumn: ID_CAMPANHA
+
+		annotation SummarizationSetBy = Automatic
+
+	column TIPOLOGIA
+		dataType: string
+		lineageTag: 4cb1b302-a710-45ab-ba8f-89a97b35297d
+		summarizeBy: none
+		sourceColumn: TIPOLOGIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column ATUALIZADO_EM
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: eb641dab-6f22-4957-b687-1ccdb736fdd3
+		summarizeBy: none
+		sourceColumn: ATUALIZADO_EM
+
+		variation Variation
+			isDefault
+			relationship: 70a821ca-e68f-45fc-ac53-9521ea2eb6bd
+			defaultHierarchy: LocalDateTable_8c480fbd-0fad-43c7-a60c-d85ccfc3d7d5.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column STATUS
+		dataType: string
+		lineageTag: fdb19be2-4041-4306-ba45-14c7b013f8be
+		summarizeBy: none
+		sourceColumn: STATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column VETOR_ID_HSM_SECUNDARIO
+		dataType: string
+		lineageTag: bbc45a27-8423-42ea-880e-a20560c40693
+		summarizeBy: none
+		sourceColumn: VETOR_ID_HSM_SECUNDARIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SECUNDARIO
+		dataType: int64
+		formatString: 0
+		lineageTag: f1bb7a32-add0-41e0-adeb-3fc1062bfdbd
+		summarizeBy: sum
+		sourceColumn: SECUNDARIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column BANCO_DADOS
+		dataType: int64
+		formatString: 0
+		lineageTag: 32285e37-9af3-4ea0-8270-fb1f432461e5
+		summarizeBy: sum
+		sourceColumn: BANCO_DADOS
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_REMARKETING
+		dataType: int64
+		formatString: 0
+		lineageTag: 4fcae334-820c-4ddd-9104-39a62655be27
+		summarizeBy: sum
+		sourceColumn: ID_REMARKETING
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONTADOR_MARKETING
+		dataType: int64
+		formatString: 0
+		lineageTag: 26efd5d3-6f1f-4485-9223-cb02864a01c4
+		summarizeBy: sum
+		sourceColumn: CONTADOR_MARKETING
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_INTENSIDADE_DOR
+		dataType: int64
+		formatString: 0
+		lineageTag: 8c62e5fc-714e-4b73-a74f-0fb680a78466
+		summarizeBy: sum
+		sourceColumn: ID_INTENSIDADE_DOR
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'chatbot_V2 HSM' = m
+		mode: import
+		source =
+				let
+				    Fonte = MySQL.Database("ls-a04f607f671036498978461f305b5a1f06f691d7.ckr1nz432eyx.us-east-2.rds.amazonaws.com", "chatbot_V2", [ReturnSingleDatabase=true]),
+				    chatbot_V2_HSM = Fonte{[Schema="chatbot_V2",Item="HSM"]}[Data]
+				in
+				    chatbot_V2_HSM
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+

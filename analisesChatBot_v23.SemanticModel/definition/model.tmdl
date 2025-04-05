@@ -1,0 +1,86 @@
+model Model
+	culture: pt-BR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pt-BR
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["RESULTADOS_CLUSTER","EnderecoFranquias","UF","chatbot_V2 CONVERSA","chatbot_V2 CAMPANHA","chatbot_V2 RESULTADO","chatbot_V2 HSM","chatbot_V2 CAMP_AGENDAMENTO","chatbot_V2 CONTATO","chatbot_V2 FLAG_HISTORICO","modelos","campanha_api","HSM_CUSTO","chatbot_V2 OMNI_CONTATO","chatbot_V2 OMNI_CONVERSA","chatbot_V2 OMNI_FLAG_HISTORICO","chatbot_V2 OMNI_MENSAGEM","chatbot_V2 AGENDAMENTO_REALIZADO","chatbot_V2 REMARKETING","omni_df","chatbot_V2 CAMP_LANDING_PAGE","chatbot_V2 LANDING_PAGE","Mensagem_HSM","Flag_repescagem","Consulta1","df","historico_cotacao_dolar","POS_VENDAS_INDICACAO","POS_VENDAS_AVALIACAO","CAMP_POS_VENDAS"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.141.1253.0 (25.03)+74f9999a1e95f78c739f3ea2b96ba340e9ba8729
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table DateTableTemplate_d01094c3-1bde-44c6-ad9e-ee86e8f6ca34
+ref table RESULTADOS_CLUSTER
+ref table EnderecoFranquias
+ref table UF
+ref table 'chatbot_V2 CONVERSA'
+ref table 'chatbot_V2 CAMPANHA'
+ref table 'chatbot_V2 RESULTADO'
+ref table 'chatbot_V2 HSM'
+ref table 'chatbot_V2 CAMP_AGENDAMENTO'
+ref table LocalDateTable_601ea21f-32bd-4415-98a7-50084e609d31
+ref table 'chatbot_V2 CONTATO'
+ref table '1.Measures'
+ref table HSM_Legenda
+ref table 'chatbot_V2 FLAG_HISTORICO'
+ref table LocalDateTable_ef447c98-efd1-4571-a3d3-446b17049a6d
+ref table LocalDateTable_ad48466f-3c5a-482d-ab14-5fe5d1bbcfb3
+ref table modelos
+ref table campanha_api
+ref table LocalDateTable_8c480fbd-0fad-43c7-a60c-d85ccfc3d7d5
+ref table CALENDARIO
+ref table LocalDateTable_45b5f7c8-d182-4a9b-8325-5f06b5698700
+ref table HSM_CUSTO
+ref table 'Id Lead Unico'
+ref table 'chatbot_V2 OMNI_CONTATO'
+ref table 'chatbot_V2 OMNI_CONVERSA'
+ref table 'chatbot_V2 OMNI_FLAG_HISTORICO'
+ref table LocalDateTable_37215822-168d-47bc-bc70-ff7a44196163
+ref table LocalDateTable_fadbc432-437f-4286-94cc-c943b05229d5
+ref table 'chatbot_V2 OMNI_MENSAGEM'
+ref table LocalDateTable_85e50610-71db-4b79-a297-f08bddd0d843
+ref table LocalDateTable_d5cca124-a6c7-4725-a7e4-cd29f855b4b1
+ref table 'chatbot_V2 AGENDAMENTO_REALIZADO'
+ref table LocalDateTable_4df50dfd-cd33-44d9-97fb-65763bcbc7e9
+ref table OMNI_RESULTADOS_CLUSTER
+ref table LocalDateTable_640c0642-bfc1-45c6-9da1-eb2e9d508732
+ref table LocalDateTable_d37111f9-bbe6-448c-b0c8-6bd8b8f1c8b4
+ref table Flag_AUX
+ref table 'Verificacao Disparo Real'
+ref table 'chatbot_V2 REMARKETING'
+ref table omni_df
+ref table 'chatbot_V2 CAMP_LANDING_PAGE'
+ref table LocalDateTable_cb09467d-4f8f-4ec6-93a4-162b043ea111
+ref table 'chatbot_V2 LANDING_PAGE'
+ref table Mensagem_HSM
+ref table LocalDateTable_a3a76fdf-2481-4f41-bc36-6085c790b6d2
+ref table LocalDateTable_a113492c-e285-4598-bc52-118897747c14
+ref table TabelaInsistências
+ref table Flag_repescagem
+ref table LocalDateTable_302cd47c-0c1a-4082-ab59-fa1fb4dc4f22
+ref table LocalDateTable_eb469a1e-f216-4fa7-b312-7fc7084e93f5
+ref table TabelaRepescagem
+ref table LocalDateTable_2021c061-434d-4dc1-b42d-f9c8c627971c
+ref table Unidade_Agenda
+ref table LocalDateTable_ab9c1f4f-e3f6-4614-990f-04d4f4783f38
+ref table Consulta1
+ref table LocalDateTable_9febc710-34dd-47ff-8c52-f6b380e04501
+ref table Flows_Unico
+ref table df
+ref table historico_cotacao_dolar
+ref table POS_VENDAS_INDICACAO
+ref table LocalDateTable_c932bf8c-27e7-4bdf-963c-6716c1605875
+ref table POS_VENDAS_AVALIACAO
+ref table LocalDateTable_00307a31-34d4-478f-97b8-6db2de79e210
+ref table LocalDateTable_c472f992-6ede-4c78-911b-f4a1245fede8
+ref table LocalDateTable_c7215f4f-603a-4968-94b5-d084f224ce9a
+ref table CAMP_POS_VENDAS
+ref table LocalDateTable_2f3c7c7f-52eb-4aa2-af78-66e0c487b0c2
+
+ref cultureInfo pt-BR
+

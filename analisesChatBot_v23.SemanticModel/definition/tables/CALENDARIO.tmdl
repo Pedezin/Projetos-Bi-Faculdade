@@ -1,0 +1,54 @@
+table CALENDARIO
+	lineageTag: 183f6b76-9e40-47d2-b293-3d22aa5524c1
+
+	column Date
+		formatString: Short Date
+		lineageTag: 8b9be731-c7cb-4c9c-af64-98d4cfaae2aa
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		variation Variation
+			isDefault
+			relationship: fb4c884a-a8f2-492f-89cf-1e943fc25e36
+			defaultHierarchy: LocalDateTable_640c0642-bfc1-45c6-9da1-eb2e9d508732.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column MONTH = ```
+			MONTH([Date]) 
+			```
+		formatString: 0
+		lineageTag: d5987487-66a2-4d36-b3a8-47fe22781fa1
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column WEEKDAY =
+			SWITCH(
+			                WEEKDAY([Date]),
+			                1, "1- Domingo",
+			                2, "2- Segunda-Feira",
+			                3, "3- Terça-Feira",
+			                4, "4- Quarta-Feira",
+			                5, "5- Quinta-Feira",
+			                6, "6- Sexta-Feira",
+			                7, "7- Sábado")
+		lineageTag: 708369cc-9f11-46e0-930a-7dfd8026b2d9
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column WEEK = WEEKNUM(CALENDARIO[Date])
+		formatString: 0
+		lineageTag: 9c965eaa-f267-4487-8b53-ab09743eb7a1
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CALENDARIO = calculated
+		mode: import
+		source = CALENDAR("2024-01-01",TODAY())
+
+	annotation PBI_Id = 2d7f9a2cd5ff4edda43260740a464ce2
+

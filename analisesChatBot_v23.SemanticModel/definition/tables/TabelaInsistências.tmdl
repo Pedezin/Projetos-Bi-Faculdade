@@ -1,0 +1,43 @@
+table TabelaInsistências
+	lineageTag: be433976-19bd-4963-944b-e90961abcac3
+
+	column Key
+		lineageTag: 5962b5e1-8e6b-43fe-88bc-cc704247451a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Mensagem_HSM[Key]
+
+		annotation SummarizationSetBy = Automatic
+
+	column SomaHSM
+		formatString: 0
+		lineageTag: aead6c51-8381-4edd-b177-26606f5e89a6
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [SomaHSM]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Campanha
+		formatString: 0
+		lineageTag: a86c3ddb-d6b2-47b1-a090-a5f98c85432d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Campanha]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition TabelaInsistências = calculated
+		mode: import
+		source = ```
+				
+				SUMMARIZE(
+				    Mensagem_HSM, 
+				    Mensagem_HSM[Key],
+				    "Campanha", MAX(Mensagem_HSM[ID_CAMPANHA]),
+				    "SomaHSM", SUM(Mensagem_HSM[HSM])
+				)
+				```
+
+	annotation PBI_Id = 4fa0bc0960904d06b62c752fea24c4b1
+

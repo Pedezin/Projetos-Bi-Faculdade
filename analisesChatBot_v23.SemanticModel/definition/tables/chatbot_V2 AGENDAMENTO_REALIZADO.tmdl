@@ -1,0 +1,109 @@
+table 'chatbot_V2 AGENDAMENTO_REALIZADO'
+	lineageTag: 8a634eb3-f98a-4530-81af-7d9fb129153d
+
+	column ID_AGENDAMENTO
+		dataType: int64
+		formatString: 0
+		lineageTag: 834cb416-60d9-43fd-a323-814f7f6d6331
+		summarizeBy: sum
+		sourceColumn: ID_AGENDAMENTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column TOKEN_CONFIRMACAO
+		dataType: string
+		lineageTag: 0fbf68e4-82fa-4a37-8d26-25c264445246
+		summarizeBy: none
+		sourceColumn: TOKEN_CONFIRMACAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column TOKEN_CANCELAMENTO
+		dataType: string
+		lineageTag: 5b806b46-a757-468e-a16b-1fb605a5a8ab
+		summarizeBy: none
+		sourceColumn: TOKEN_CANCELAMENTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column TELEFONE
+		dataType: int64
+		formatString: 0
+		lineageTag: 7ecc285c-be34-4856-868d-17f82cdc8cd2
+		summarizeBy: none
+		sourceColumn: TELEFONE
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOME
+		dataType: string
+		lineageTag: 40fa9326-d963-4ac2-9e08-5454956da6db
+		summarizeBy: none
+		sourceColumn: NOME
+
+		annotation SummarizationSetBy = Automatic
+
+	column AGENDAMENTO_BOT
+		dataType: int64
+		formatString: 0
+		lineageTag: edfed946-54c9-4fe8-9c3e-d211fbe2daa0
+		summarizeBy: sum
+		sourceColumn: AGENDAMENTO_BOT
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATA_AGENDAMENTO
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b037f6c6-9d80-4d0c-8795-a0a23e403027
+		summarizeBy: none
+		sourceColumn: DATA_AGENDAMENTO
+
+		variation Variation
+			isDefault
+			relationship: d2a01376-e183-402f-b9d2-31f412418086
+			defaultHierarchy: LocalDateTable_4df50dfd-cd33-44d9-97fb-65763bcbc7e9.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column HORARIO
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 8859073d-7112-4c2c-b77e-b9802f358174
+		summarizeBy: none
+		sourceColumn: HORARIO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column UNIDADE_PSD
+		dataType: string
+		lineageTag: 84d1776d-20f2-4ee7-9f24-5eb40d62ac74
+		summarizeBy: none
+		sourceColumn: UNIDADE_PSD
+
+		annotation SummarizationSetBy = Automatic
+
+	column EMAIL
+		dataType: string
+		lineageTag: d5a24131-4d04-4ff3-b2ef-53a7a06bf1a8
+		summarizeBy: none
+		sourceColumn: EMAIL
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'chatbot_V2 AGENDAMENTO_REALIZADO' = m
+		mode: import
+		source =
+				let
+				    Fonte = MySQL.Database("ls-a04f607f671036498978461f305b5a1f06f691d7.ckr1nz432eyx.us-east-2.rds.amazonaws.com", "chatbot_V2", [ReturnSingleDatabase=true]),
+				    chatbot_V2_AGENDAMENTO_REALIZADO = Fonte{[Schema="chatbot_V2",Item="AGENDAMENTO_REALIZADO"]}[Data],
+				    #"Colunas Renomeadas" = Table.RenameColumns(chatbot_V2_AGENDAMENTO_REALIZADO,{{"DATA", "DATA_AGENDAMENTO"}})
+				in
+				    #"Colunas Renomeadas"
+
+	annotation PBI_ResultType = Table
+

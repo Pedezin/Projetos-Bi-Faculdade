@@ -1,0 +1,72 @@
+table omni_df
+	lineageTag: ce5630be-99fb-4950-98be-0633ff2b4fdd
+
+	column Data_contato
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 359a2603-54d6-4ca6-a378-690585f399de
+		summarizeBy: none
+		sourceColumn: Data_contato
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Campanha
+		dataType: string
+		lineageTag: b2f66942-d579-4ddb-9871-539cf49af802
+		summarizeBy: none
+		sourceColumn: Campanha
+
+		annotation SummarizationSetBy = Automatic
+
+	column Adicionado
+		dataType: int64
+		formatString: 0
+		lineageTag: 1d9fa1f3-0ef5-4b82-a5f3-85f68cdcbf99
+		summarizeBy: sum
+		sourceColumn: Adicionado
+
+		annotation SummarizationSetBy = Automatic
+
+	column Respondido
+		dataType: int64
+		formatString: 0
+		lineageTag: 1b1bc0a9-ede2-4947-b859-59624c418516
+		summarizeBy: sum
+		sourceColumn: Respondido
+
+		annotation SummarizationSetBy = Automatic
+
+	column Agendado
+		dataType: int64
+		formatString: 0
+		lineageTag: b992d525-901b-4f5f-b049-76f2ff80bb45
+		summarizeBy: sum
+		sourceColumn: Agendado
+
+		annotation SummarizationSetBy = Automatic
+
+	column Intervencao
+		dataType: int64
+		formatString: 0
+		lineageTag: 4645c753-8993-4c41-b5aa-fcd10feaf5a1
+		summarizeBy: sum
+		sourceColumn: Intervencao
+
+		annotation SummarizationSetBy = Automatic
+
+	partition omni_df = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents("C:\Users\g4375458\querys_pbi\omni_data\omni_df.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"Data_contato", type date}, {"Campanha", type text}, {"Adicionado", Int64.Type}, {"Respondido", Int64.Type}, {"Agendado", Int64.Type}, {"Intervencao", Int64.Type}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+

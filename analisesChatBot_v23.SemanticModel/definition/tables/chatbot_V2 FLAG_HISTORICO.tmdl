@@ -1,0 +1,78 @@
+table 'chatbot_V2 FLAG_HISTORICO'
+	lineageTag: c528d1d8-37e7-42f6-bb36-bc5034d5025d
+
+	column DATETIME_CONVERSA
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 01712c2f-f840-4946-bbab-a4f74a9cc838
+		summarizeBy: none
+		sourceColumn: DATETIME_CONVERSA
+
+		variation Variation
+			isDefault
+			relationship: 4861c2d3-be49-40fd-a72d-ea571a8e2279
+			defaultHierarchy: LocalDateTable_ef447c98-efd1-4571-a3d3-446b17049a6d.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATETIME_FLAG
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ad332567-e875-4f2a-a8f3-52a29b1e5867
+		summarizeBy: none
+		sourceColumn: DATETIME_FLAG
+
+		variation Variation
+			isDefault
+			relationship: 40cd27d2-bada-408c-ad9b-972e1ba0d39a
+			defaultHierarchy: LocalDateTable_ad48466f-3c5a-482d-ab14-5fe5d1bbcfb3.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column TELEFONE
+		dataType: int64
+		formatString: 0
+		lineageTag: ccd9db74-4972-478d-88c5-d105699db851
+		summarizeBy: none
+		sourceColumn: TELEFONE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_CAMPANHA
+		dataType: int64
+		formatString: 0
+		lineageTag: a6d67e2e-4d2a-4e58-b622-9cdf0db33d62
+		summarizeBy: sum
+		sourceColumn: ID_CAMPANHA
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_FLAG
+		dataType: int64
+		formatString: 0
+		lineageTag: 5cc0d551-fdc2-4aa6-968a-5b99332365dd
+		summarizeBy: sum
+		sourceColumn: ID_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATA = DATE(YEAR('chatbot_V2 FLAG_HISTORICO'[DATETIME_FLAG]), MONTH('chatbot_V2 FLAG_HISTORICO'[DATETIME_FLAG]), DAY('chatbot_V2 FLAG_HISTORICO'[DATETIME_FLAG]))
+		formatString: General Date
+		lineageTag: 395e3ab5-5180-4359-8a9b-3baed3574f76
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'chatbot_V2 FLAG_HISTORICO' = m
+		mode: import
+		source =
+				let
+				    Fonte = MySQL.Database("ls-a04f607f671036498978461f305b5a1f06f691d7.ckr1nz432eyx.us-east-2.rds.amazonaws.com", "chatbot_V2", [ReturnSingleDatabase=true, Query="SELECT * FROM FLAG_HISTORICO WHERE DATETIME_CONVERSA >= DATE_SUB(NOW(), INTERVAL 12 MONTH) AND TELEFONE NOT IN (9223372036854775807)"]),
+				    #"Linhas Filtradas" = Table.SelectRows(Fonte, each ([ID_FLAG] = 5))
+				in
+				    #"Linhas Filtradas"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+

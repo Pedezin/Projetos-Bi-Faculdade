@@ -1,0 +1,49 @@
+table 'chatbot_V2 LANDING_PAGE'
+	lineageTag: 27a71b44-3e7e-49c6-8316-1b3befdee259
+
+	column ID_SUBCAMPANHA
+		dataType: int64
+		formatString: 0
+		lineageTag: 9a1511b3-9747-460a-b1d8-ca3f9fa43b77
+		summarizeBy: none
+		sourceColumn: ID_SUBCAMPANHA
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRIMEIRA_MENSAGEM
+		dataType: string
+		lineageTag: 7852485e-7f07-49c1-8c3d-58c6c20d2946
+		summarizeBy: none
+		sourceColumn: PRIMEIRA_MENSAGEM
+
+		annotation SummarizationSetBy = Automatic
+
+	column STRING_DOR
+		dataType: string
+		lineageTag: d124d4e9-2e4d-45fc-aea8-fd278a8ffddd
+		summarizeBy: none
+		sourceColumn: STRING_DOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column STRING_SITE
+		dataType: string
+		lineageTag: 3329f80b-88db-406e-a336-08c8e10c6438
+		summarizeBy: none
+		sourceColumn: STRING_SITE
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'chatbot_V2 LANDING_PAGE' = m
+		mode: import
+		source =
+				let
+				    Fonte = MySQL.Database("ls-a04f607f671036498978461f305b5a1f06f691d7.ckr1nz432eyx.us-east-2.rds.amazonaws.com", "chatbot_V2", [ReturnSingleDatabase=true]),
+				    chatbot_V2_RESULTADO = Fonte{[Schema="chatbot_V2",Item="LANDING_PAGE"]}[Data]
+				in
+				    chatbot_V2_RESULTADO
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Exception
+

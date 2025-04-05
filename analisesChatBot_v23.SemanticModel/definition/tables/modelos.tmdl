@@ -1,0 +1,56 @@
+table modelos
+	lineageTag: d02557d4-5c69-48b1-a281-67595c80e061
+
+	column modelo
+		dataType: string
+		lineageTag: 8e1eea0c-6042-4ea0-8d1d-756d36a3ff61
+		summarizeBy: none
+		sourceColumn: modelo
+
+		annotation SummarizationSetBy = Automatic
+
+	column preco_entrada
+		dataType: double
+		lineageTag: 9988951b-2126-4846-bde3-dabcb67e002d
+		summarizeBy: none
+		sourceColumn: preco_entrada
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column preco_saida
+		dataType: double
+		lineageTag: d49c1f10-9787-4cbc-b4f9-349083ad3f1c
+		summarizeBy: none
+		sourceColumn: preco_saida
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column preco_cache
+		dataType: double
+		lineageTag: 801a283e-e1d0-4fbd-a816-4a5068e65da4
+		summarizeBy: none
+		sourceColumn: preco_cache
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition modelos = m
+		mode: import
+		source =
+				let
+				    Fonte = Json.Document(File.Contents("C:\Users\g4375458\Downloads\modelos.json")),
+				    #"Convertido para Tabela" = Table.FromList(Fonte, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				    #"Column1 Expandido" = Table.ExpandRecordColumn(#"Convertido para Tabela", "Column1", {"modelo", "preco_entrada", "preco_saida","preco_cache"}, {"modelo", "preco_entrada", "preco_saida","preco_cache"}),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Column1 Expandido",{{"modelo", type text}, {"preco_entrada", type number}, {"preco_saida", type number}, {"preco_cache", type number}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+

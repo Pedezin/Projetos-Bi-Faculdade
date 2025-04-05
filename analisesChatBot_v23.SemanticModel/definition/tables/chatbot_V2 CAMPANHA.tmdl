@@ -1,0 +1,66 @@
+table 'chatbot_V2 CAMPANHA'
+	lineageTag: 851c6d99-e8f2-4ffc-986a-49e8ccca7736
+
+	column ID_CAMPANHA
+		dataType: int64
+		formatString: 0
+		lineageTag: 49b4790e-1608-4ada-83be-f625a083560b
+		summarizeBy: none
+		sourceColumn: ID_CAMPANHA
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOME_CAMPANHA
+		dataType: string
+		lineageTag: d2f5a032-fa96-4ce2-8cb9-d56a1e62918f
+		summarizeBy: none
+		sourceColumn: NOME_CAMPANHA
+
+		annotation SummarizationSetBy = Automatic
+
+	column TIPOLOGIA
+		dataType: string
+		lineageTag: 567fd393-f0e6-48ff-9a49-5dd8b363b76e
+		summarizeBy: none
+		sourceColumn: TIPOLOGIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column COMPLETAR_CADASTRO
+		dataType: int64
+		formatString: 0
+		lineageTag: 2292f100-a448-4dca-ac7f-71b7454ed38c
+		summarizeBy: sum
+		sourceColumn: COMPLETAR_CADASTRO
+
+		annotation SummarizationSetBy = Automatic
+
+	column AGENDAMENTO_CADASTRADO
+		dataType: int64
+		formatString: 0
+		lineageTag: 34956e1e-6783-4954-9e68-69850e8dbe7f
+		summarizeBy: sum
+		sourceColumn: AGENDAMENTO_CADASTRADO
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'chatbot_V2 CAMPANHA' = m
+		mode: import
+		source = ```
+				let
+				    Fonte = MySQL.Database("ls-a04f607f671036498978461f305b5a1f06f691d7.ckr1nz432eyx.us-east-2.rds.amazonaws.com", "chatbot_V2", [ReturnSingleDatabase=true]),
+				    chatbot_V2_CAMPANHA = Fonte{[Schema="chatbot_V2",Item="CAMPANHA"]}[Data],
+				    #"Colunas Removidas" = Table.SelectColumns(chatbot_V2_CAMPANHA, {"ID_CAMPANHA", "NOME_CAMPANHA", "TIPOLOGIA", "COMPLETAR_CADASTRO", "AGENDAMENTO_CADASTRADO"}),
+				    newRows = Table.InsertRows(#"Colunas Removidas", 0, 
+				{[ID_CAMPANHA = 100, NOME_CAMPANHA = "NOSHOW_BD",TIPOLOGIA = "ATIVO", COMPLETAR_CADASTRO = 0, AGENDAMENTO_CADASTRADO = 1, ID_CANAL = 0],
+				[ID_CAMPANHA = 102, NOME_CAMPANHA = "CANCELADOS_BD",TIPOLOGIA = "ATIVO", COMPLETAR_CADASTRO = 0, AGENDAMENTO_CADASTRADO = 1, ID_CANAL = 0],[ID_CAMPANHA = 103, NOME_CAMPANHA = "INDIQUE_AMIGOS_BD",TIPOLOGIA = "ATIVO", COMPLETAR_CADASTRO = 0, AGENDAMENTO_CADASTRADO = 1, ID_CANAL = 0],
+				[ID_CAMPANHA = -2, NOME_CAMPANHA = "HOMOLOG",TIPOLOGIA = "ATIVO", COMPLETAR_CADASTRO = 0, AGENDAMENTO_CADASTRADO = 0, ID_CANAL = 0]
+				})
+				in
+				    newRows
+				```
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+

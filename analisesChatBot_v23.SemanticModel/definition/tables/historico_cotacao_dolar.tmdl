@@ -1,0 +1,38 @@
+table historico_cotacao_dolar
+	lineageTag: a7668206-e477-40d7-b0ee-10fb9c2404ff
+
+	column cotacaoCompra
+		dataType: double
+		lineageTag: 4bdf7e5c-0eac-482a-b133-713b6f242e29
+		summarizeBy: sum
+		sourceColumn: cotacaoCompra
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column data
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8532a93b-25e2-41bb-a5b6-e65aa26ae6d8
+		summarizeBy: none
+		sourceColumn: data
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition historico_cotacao_dolar = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents("C:\Users\g4375458\querys_pbi\cotacoes_dolar\cotacao_dolar.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"data", type date}, {"cotacaoCompra", type number}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

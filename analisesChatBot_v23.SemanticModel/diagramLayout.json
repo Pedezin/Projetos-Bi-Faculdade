@@ -1,0 +1,553 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 402.73601278421722,
+        "y": 980.9498597101292
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "nodeIndex": "RESULTADOS_CLUSTER",
+          "nodeLineageTag": "10f549f5-06b7-452f-88fe-36e20f1a9a5a",
+          "size": {
+            "height": 224.38567654296321,
+            "width": 234
+          },
+          "zIndex": 34
+        },
+        {
+          "location": {
+            "x": 1040.1204600889725,
+            "y": 448.082431619741
+          },
+          "nodeIndex": "EnderecoFranquias",
+          "nodeLineageTag": "32d6cac0-6082-41fa-b2ab-856113b11739",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 22
+        },
+        {
+          "location": {
+            "x": 1036.9379473760107,
+            "y": 849.94864758441156
+          },
+          "nodeIndex": "UF",
+          "nodeLineageTag": "714de935-fb39-489b-b822-b195ad757d40",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 28
+        },
+        {
+          "location": {
+            "x": 653.39442115260977,
+            "y": 289.9603980816089
+          },
+          "nodeIndex": "chatbot_V2 CAMP_AGENDAMENTO",
+          "nodeLineageTag": "b4aa026e-a36c-4a0b-af1c-b14b4c8cae88",
+          "size": {
+            "height": 203.22525199549858,
+            "width": 338.29065289567825
+          },
+          "zIndex": 41
+        },
+        {
+          "location": {
+            "x": 252.23784511174887,
+            "y": 26.921944172566981
+          },
+          "nodeIndex": "chatbot_V2 CAMPANHA",
+          "nodeLineageTag": "851c6d99-e8f2-4ffc-986a-49e8ccca7736",
+          "size": {
+            "height": 200,
+            "width": 301.64799106746705
+          },
+          "zIndex": 25
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 342.63385261386435
+          },
+          "nodeIndex": "chatbot_V2 CONVERSA",
+          "nodeLineageTag": "b93dfceb-1710-496f-88b9-21892c90fc1b",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 32,
+          "expandedHeight": 246.5906668527611
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 699.17216652494642
+          },
+          "nodeIndex": "chatbot_V2 HSM",
+          "nodeLineageTag": "9b9b5b89-5a51-49a0-82ca-026b936b383c",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 33
+        },
+        {
+          "location": {
+            "x": 638.27924727693119,
+            "y": 607.63359271898457
+          },
+          "nodeIndex": "chatbot_V2 RESULTADO",
+          "nodeLineageTag": "f514f54e-c321-46ee-a603-807380ef7d1a",
+          "size": {
+            "height": 171.500459835284,
+            "width": 283.32666015336133
+          },
+          "zIndex": 23
+        },
+        {
+          "location": {
+            "x": 280.5202536047567,
+            "y": 554.364084633161
+          },
+          "nodeIndex": "chatbot_V2 CONTATO",
+          "nodeLineageTag": "446af863-1ee9-48fb-bf78-229366479028",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 24
+        },
+        {
+          "location": {
+            "x": 1396.4107070697135,
+            "y": 497.06863877646134
+          },
+          "nodeIndex": "1.Measures",
+          "nodeLineageTag": "d20a18ed-a6bb-4a18-be7e-a802d545d0cf",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 21
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 937.09252095645013
+          },
+          "nodeIndex": "HSM_Legenda",
+          "nodeLineageTag": "12d3d542-edd1-48b2-aab2-a57b93f81e31",
+          "size": {
+            "height": 263.57759514387669,
+            "width": 234
+          },
+          "zIndex": 26
+        },
+        {
+          "location": {
+            "x": 305.8794075561708,
+            "y": 1486.185061782752
+          },
+          "nodeIndex": "chatbot_V2 FLAG_HISTORICO",
+          "nodeLineageTag": "c528d1d8-37e7-42f6-bb36-bc5034d5025d",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 31
+        },
+        {
+          "location": {
+            "x": 1841.8158280028244,
+            "y": 0
+          },
+          "nodeIndex": "modelos",
+          "nodeLineageTag": "d02557d4-5c69-48b1-a281-67595c80e061",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 27
+        },
+        {
+          "location": {
+            "x": 1376.9379205391122,
+            "y": 337.98767328500276
+          },
+          "nodeIndex": "campanha_api",
+          "nodeLineageTag": "abf6d0d4-5a58-4c6e-a390-9392a0cab6f8",
+          "size": {
+            "height": 280.25160942349419,
+            "width": 234
+          },
+          "zIndex": 20
+        },
+        {
+          "location": {
+            "x": 281.289084852909,
+            "y": 802.34332710669958
+          },
+          "nodeIndex": "CALENDARIO",
+          "nodeLineageTag": "183f6b76-9e40-47d2-b293-3d22aa5524c1",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 30
+        },
+        {
+          "location": {
+            "x": 290.9220781724996,
+            "y": 1053.4259671410723
+          },
+          "nodeIndex": "HSM_CUSTO",
+          "nodeLineageTag": "1e5fc029-8935-46b2-9f46-4003364cfd25",
+          "size": {
+            "height": 145,
+            "width": 234
+          },
+          "zIndex": 29
+        },
+        {
+          "location": {
+            "x": 869.64712094384413,
+            "y": 1233.9020495007373
+          },
+          "nodeIndex": "Id Lead Unico",
+          "nodeLineageTag": "d9bc4c27-e30c-4277-8bef-11ccb97cb6a7",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 14
+        },
+        {
+          "location": {
+            "x": 3.1053984834003927,
+            "y": 1294.2559803848676
+          },
+          "nodeIndex": "chatbot_V2 AGENDAMENTO_REALIZADO",
+          "nodeLineageTag": "8a634eb3-f98a-4530-81af-7d9fb129153d",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 15
+        },
+        {
+          "location": {
+            "x": 3044.3463668354971,
+            "y": 647.31747636803516
+          },
+          "nodeIndex": "chatbot_V2 OMNI_CONTATO",
+          "nodeLineageTag": "338ce550-0b1a-4c31-8224-c252eb25b8f0",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 16
+        },
+        {
+          "location": {
+            "x": 3328.3463668354971,
+            "y": 623.31747636803516
+          },
+          "nodeIndex": "chatbot_V2 OMNI_CONVERSA",
+          "nodeLineageTag": "a955b541-32fa-4963-9506-ce61507b8622",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 17
+        },
+        {
+          "location": {
+            "x": 3326.6781222455752,
+            "y": 382.19371533899027
+          },
+          "nodeIndex": "chatbot_V2 OMNI_FLAG_HISTORICO",
+          "nodeLineageTag": "2b26c7f6-6cae-4ca4-b9b3-8686b71861d7",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 18
+        },
+        {
+          "location": {
+            "x": 3630.5664177549997,
+            "y": 613.12550323252833
+          },
+          "nodeIndex": "chatbot_V2 OMNI_MENSAGEM",
+          "nodeLineageTag": "a1d9bc0c-eac1-4fa7-864c-8f4b2e17e268",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 19
+        },
+        {
+          "location": {
+            "x": 3914.5664177549997,
+            "y": 695.1279901924338
+          },
+          "nodeIndex": "OMNI_RESULTADOS_CLUSTER",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 13
+        },
+        {
+          "location": {
+            "x": 2415.9841639386536,
+            "y": 1005.6782907663418
+          },
+          "nodeIndex": "Flag_AUX",
+          "nodeLineageTag": "284939c1-1e2b-4a2b-91f0-ea3ecac484cd",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 12
+        },
+        {
+          "location": {
+            "x": 1402.1513868679488,
+            "y": 1444.6069543147289
+          },
+          "nodeIndex": "Verificacao Disparo Real",
+          "nodeLineageTag": "7d02f5c0-47a7-4448-8263-8437e542b101",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 11
+        },
+        {
+          "location": {
+            "x": 1707.7079269672963,
+            "y": 410.63992139420878
+          },
+          "nodeIndex": "chatbot_V2 REMARKETING",
+          "nodeLineageTag": "67383948-7538-4a53-b5e0-30c44502c08c",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 35
+        },
+        {
+          "location": {
+            "x": 1790.9907064179954,
+            "y": 1019.5704604593577
+          },
+          "nodeIndex": "omni_df",
+          "nodeLineageTag": "ce5630be-99fb-4950-98be-0633ff2b4fdd",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 10
+        },
+        {
+          "location": {
+            "x": 2056.1422678082649,
+            "y": 466.29773318662996
+          },
+          "nodeIndex": "chatbot_V2 CAMP_LANDING_PAGE",
+          "nodeLineageTag": "f73bb425-ebc3-429f-8c72-16c214d85495",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 36
+        },
+        {
+          "location": {
+            "x": 2212.7377018989514,
+            "y": 177.54772794374458
+          },
+          "nodeIndex": "chatbot_V2 LANDING_PAGE",
+          "nodeLineageTag": "27a71b44-3e7e-49c6-8316-1b3befdee259",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 1408.1782166517228,
+            "y": 768.55112153655762
+          },
+          "nodeIndex": "TabelaInsistências",
+          "nodeLineageTag": "be433976-19bd-4963-944b-e90961abcac3",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 590.34732471050609,
+            "y": 798.10430357425741
+          },
+          "nodeIndex": "Mensagem_HSM",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 1690.8331567029586,
+            "y": 759.51098721409187
+          },
+          "nodeIndex": "Flag_repescagem",
+          "nodeLineageTag": "18d965b1-12da-4b96-8c94-71e66f0901cf",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 1989.8999001027992,
+            "y": 732.390584246694
+          },
+          "nodeIndex": "TabelaRepescagem",
+          "nodeLineageTag": "59adf20c-4882-46c9-b436-23ef71f6ab46",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 1884.8805481193885,
+            "y": 252.18354244551801
+          },
+          "nodeIndex": "Unidade_Agenda",
+          "nodeLineageTag": "10e1b0a8-71ba-481e-a32f-6967d8709e69",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 763.71118397878354,
+            "y": 0
+          },
+          "nodeIndex": "Consulta1",
+          "nodeLineageTag": "9c4a1350-76c4-413c-b420-7932b23095b3",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 38
+        },
+        {
+          "location": {
+            "x": 1101.760786523259,
+            "y": 0
+          },
+          "nodeIndex": "Flows_Unico",
+          "nodeLineageTag": "ac9da404-6cf9-48f6-a282-235771725aa2",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 39
+        },
+        {
+          "location": {
+            "x": 2401.2978485254434,
+            "y": 0
+          },
+          "nodeIndex": "df",
+          "nodeLineageTag": "73fc0005-ffb8-45ae-970d-24158306fc6c",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 500.40615386887293,
+            "y": 1230.1083887388468
+          },
+          "nodeIndex": "historico_cotacao_dolar",
+          "nodeLineageTag": "a7668206-e477-40d7-b0ee-10fb9c2404ff",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 40
+        },
+        {
+          "location": {
+            "x": 682.1715938594665,
+            "y": 1527.9110857897992
+          },
+          "nodeIndex": "POS_VENDAS_INDICACAO",
+          "nodeLineageTag": "980e0994-d7d3-4361-addc-6c4ab0f9e9f3",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 1105.4682899636825,
+            "y": 1109.280125472158
+          },
+          "nodeIndex": "POS_VENDAS_AVALIACAO",
+          "nodeLineageTag": "77032282-b720-4deb-ab2c-c8fa096676d9",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 1478.8812353006736,
+            "y": 1047.280125472158
+          },
+          "nodeIndex": "CAMP_POS_VENDAS",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Todas as tabelas",
+      "zoomValue": 69.524450536292562,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas as tabelas",
+  "defaultDiagram": "Todas as tabelas"
+}

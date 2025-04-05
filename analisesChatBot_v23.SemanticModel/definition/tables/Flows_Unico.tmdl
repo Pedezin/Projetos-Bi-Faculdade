@@ -1,0 +1,70 @@
+table Flows_Unico
+	lineageTag: ac9da404-6cf9-48f6-a282-235771725aa2
+
+	column TELEFONE
+		formatString: 0
+		lineageTag: f50b8694-2edf-4e16-95d3-d3c4463b426a
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: Consulta1[TELEFONE]
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_flow
+		lineageTag: 019fffe8-4fd2-42d4-a0db-e4fdd0a57cdc
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [id_flow]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Campanha
+		formatString: 0
+		lineageTag: 5c396301-1482-47ba-b137-422843b95a67
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Campanha]
+
+		annotation SummarizationSetBy = Automatic
+
+	column MaxData
+		formatString: General Date
+		lineageTag: 37eef042-4524-4786-8eb6-37373da4cde9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [MaxData]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Flows_Unico = calculated
+		mode: import
+		source = ```
+				
+				    ADDCOLUMNS(
+				        SUMMARIZE(
+				            Consulta1, 
+				            Consulta1[TELEFONE],
+				            "Campanha",
+				            MAX(Consulta1[ID_CAMPANHA]),
+				            "MaxData",
+				            MAX(Consulta1[Data])
+				        ),
+				        "id_flow",
+				            VAR TelefoneAtual = [TELEFONE]
+				            VAR FlowExistente = 
+				                CALCULATE(
+				                    MAX(Consulta1[id_flow]),
+				                    Consulta1[TELEFONE] = TelefoneAtual,
+				                    Consulta1[id_flow] <> "Sem_flows"
+				                )
+				            RETURN 
+				                IF(
+				                    NOT ISBLANK(FlowExistente),
+				                    FlowExistente,
+				                    "Sem_flows"
+				                )
+				    )
+				```
+
+	annotation PBI_Id = 560106d9b1f94254a3edddc531433a29
+

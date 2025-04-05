@@ -1,0 +1,86 @@
+table 'chatbot_V2 OMNI_MENSAGEM'
+	lineageTag: a1d9bc0c-eac1-4fa7-864c-8f4b2e17e268
+
+	column ID_CONTATO
+		dataType: string
+		lineageTag: 007607ac-115c-49d2-92b6-38e002be883e
+		summarizeBy: none
+		sourceColumn: ID_CONTATO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATETIME_CONVERSA
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9bca6757-2ccc-4c46-b342-257945d00fe6
+		summarizeBy: none
+		sourceColumn: DATETIME_CONVERSA
+
+		variation Variation
+			isDefault
+			relationship: 94445721-846d-4fa3-8096-33560717b4dc
+			defaultHierarchy: LocalDateTable_85e50610-71db-4b79-a297-f08bddd0d843.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_CAMPANHA
+		dataType: int64
+		formatString: 0
+		lineageTag: c3e6523d-cb06-4fbd-86aa-a5255e01027e
+		summarizeBy: sum
+		sourceColumn: ID_CAMPANHA
+
+		annotation SummarizationSetBy = Automatic
+
+	column MENSAGEM_DATETIME
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 20af115e-eb41-43b8-ad96-2a81436a50e4
+		summarizeBy: none
+		sourceColumn: MENSAGEM_DATETIME
+
+		variation Variation
+			isDefault
+			relationship: 45411d54-ea5f-4f87-b138-09e943062cf8
+			defaultHierarchy: LocalDateTable_d5cca124-a6c7-4725-a7e4-cd29f855b4b1.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONTEUDO
+		dataType: string
+		lineageTag: 31fb8c54-6017-43c1-8575-7ce29adf3956
+		summarizeBy: none
+		sourceColumn: CONTEUDO
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_AUTOR
+		dataType: int64
+		formatString: 0
+		lineageTag: bd858210-25c4-4089-8f9e-bf27587104aa
+		summarizeBy: sum
+		sourceColumn: ID_AUTOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column CUSTO
+		dataType: double
+		lineageTag: c4b04bc3-09f3-4904-85a3-2b4234d38553
+		summarizeBy: sum
+		sourceColumn: CUSTO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'chatbot_V2 OMNI_MENSAGEM' = m
+		mode: import
+		source =
+				let
+				    Fonte = MySQL.Database("ls-a04f607f671036498978461f305b5a1f06f691d7.ckr1nz432eyx.us-east-2.rds.amazonaws.com", "chatbot_V2", [ReturnSingleDatabase=true]),
+				    chatbot_V2_OMNI_MENSAGEM = Fonte{[Schema="chatbot_V2",Item="OMNI_MENSAGEM"]}[Data]
+				in
+				    chatbot_V2_OMNI_MENSAGEM
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,125 @@
+table EnderecoFranquias
+	lineageTag: 32d6cac0-6082-41fa-b2ab-856113b11739
+
+	column grupoFranquia
+		dataType: string
+		lineageTag: 093025e9-923e-4da4-a299-66fbdaedb879
+		summarizeBy: none
+		sourceColumn: grupoFranquia
+
+		annotation SummarizationSetBy = Automatic
+
+	column nomeFranquia
+		dataType: string
+		lineageTag: 2ad65bda-a659-47ea-8cdc-ca2e7d2d6b3a
+		summarizeBy: none
+		sourceColumn: nomeFranquia
+
+		annotation SummarizationSetBy = Automatic
+
+	column estadoFranquia
+		dataType: string
+		lineageTag: aa002d0b-384d-4dcf-8c8d-dd08de646eff
+		dataCategory: StateOrProvince
+		summarizeBy: none
+		sourceColumn: estadoFranquia
+
+		annotation SummarizationSetBy = Automatic
+
+	column cidadeFranquia
+		dataType: string
+		lineageTag: 44c5e111-23af-44ce-afc1-f03dd051bc4f
+		summarizeBy: none
+		sourceColumn: cidadeFranquia
+
+		annotation SummarizationSetBy = Automatic
+
+	column bairroFranquia
+		dataType: string
+		lineageTag: 224d65ae-55ad-4d15-a380-860a18421866
+		summarizeBy: none
+		sourceColumn: bairroFranquia
+
+		annotation SummarizationSetBy = Automatic
+
+	column enderecoFranquia
+		dataType: string
+		lineageTag: 055539b0-5c0d-4656-948e-68865a2bc04c
+		summarizeBy: none
+		sourceColumn: enderecoFranquia
+
+		annotation SummarizationSetBy = Automatic
+
+	column descricao_zona
+		dataType: string
+		lineageTag: e85fa290-adcc-4e40-891d-cbfcd7f068b2
+		summarizeBy: none
+		sourceColumn: descricao_zona
+
+		annotation SummarizationSetBy = Automatic
+
+	column complementoFranquia
+		dataType: string
+		lineageTag: 303faccb-3e82-464b-9305-144aebf58b8d
+		summarizeBy: none
+		sourceColumn: complementoFranquia
+
+		annotation SummarizationSetBy = Automatic
+
+	column telefoneFranquia
+		dataType: string
+		lineageTag: 741b6d28-ee4f-423d-8280-4ff099f24d23
+		summarizeBy: none
+		sourceColumn: telefoneFranquia
+
+		annotation SummarizationSetBy = Automatic
+
+	column contatoAdicional
+		dataType: string
+		lineageTag: bf4d441d-a9ff-4ef4-97b5-4c03b307f672
+		summarizeBy: none
+		sourceColumn: contatoAdicional
+
+		annotation SummarizationSetBy = Automatic
+
+	column cepFranquia
+		dataType: string
+		lineageTag: a1d53b90-2e98-4f00-b566-92e0b6ac6ecd
+		summarizeBy: none
+		sourceColumn: cepFranquia
+
+		annotation SummarizationSetBy = Automatic
+
+	column latitude
+		dataType: int64
+		formatString: 0
+		lineageTag: b66d45e0-20cb-4416-afb6-b739dc31edd4
+		summarizeBy: sum
+		sourceColumn: latitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column longitude
+		dataType: int64
+		formatString: 0
+		lineageTag: ce38a6ad-6d7a-41a4-a13a-185ab2d129bd
+		summarizeBy: sum
+		sourceColumn: longitude
+
+		annotation SummarizationSetBy = Automatic
+
+	partition EnderecoFranquias = m
+		mode: import
+		source =
+				let
+				    Fonte = Json.Document(Web.Contents("https://psdsaopaulo.net.br/psd2/app/api/agenda-parceiro/unidades/token/fc6f56a946864a93065ef6b105277fdec3066de543adba6471ce3ea1747b407b")),
+				    #"Convertido para Tabela" = Table.FromList(Fonte, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				    #"Column1 Expandido" = Table.ExpandRecordColumn(#"Convertido para Tabela", "Column1", {"grupoFranquia", "nomeFranquia", "estadoFranquia", "cidadeFranquia", "bairroFranquia", "enderecoFranquia", "descricao_zona", "complementoFranquia", "telefoneFranquia", "cepFranquia", "latitude", "longitude", "contatoAdicional"}, {"grupoFranquia", "nomeFranquia", "estadoFranquia", "cidadeFranquia", "bairroFranquia", "enderecoFranquia", "descricao_zona", "complementoFranquia", "telefoneFranquia", "cepFranquia", "latitude", "longitude", "contatoAdicional"}),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Column1 Expandido",{{"grupoFranquia", type text}, {"nomeFranquia", type text}, {"estadoFranquia", type text}, {"cidadeFranquia", type text}, {"bairroFranquia", type text}, {"enderecoFranquia", type text},{"descricao_zona", type text}, {"complementoFranquia", type text}, {"telefoneFranquia", type text}, {"contatoAdicional", type text}, {"cepFranquia", type text}, {"latitude", Int64.Type}, {"longitude", Int64.Type}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+

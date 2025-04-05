@@ -1,0 +1,47 @@
+table 'chatbot_V2 OMNI_CONTATO'
+	lineageTag: 338ce550-0b1a-4c31-8224-c252eb25b8f0
+
+	column ID_CONTATO
+		dataType: string
+		lineageTag: bbad1b0a-84e1-453a-a119-1e880a0ebd2d
+		summarizeBy: none
+		sourceColumn: ID_CONTATO
+
+		annotation SummarizationSetBy = Automatic
+
+	column TELEFONE
+		dataType: int64
+		formatString: 0
+		lineageTag: 6d715a2f-7e73-4baa-9893-6684469853c7
+		summarizeBy: none
+		sourceColumn: TELEFONE
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOME_CLIENTE
+		dataType: string
+		lineageTag: 3b9db4a4-34e2-4ddc-9cd7-87e88b573b60
+		summarizeBy: none
+		sourceColumn: NOME_CLIENTE
+
+		annotation SummarizationSetBy = Automatic
+
+	column GENERO
+		dataType: string
+		lineageTag: ddd1bf0e-93c5-42d0-a726-9e23acafcb9f
+		summarizeBy: none
+		sourceColumn: GENERO
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'chatbot_V2 OMNI_CONTATO' = m
+		mode: import
+		source =
+				let
+				    Fonte = MySQL.Database("ls-a04f607f671036498978461f305b5a1f06f691d7.ckr1nz432eyx.us-east-2.rds.amazonaws.com", "chatbot_V2", [ReturnSingleDatabase=true]),
+				    chatbot_V2_OMNI_CONTATO = Fonte{[Schema="chatbot_V2",Item="OMNI_CONTATO"]}[Data]
+				in
+				    chatbot_V2_OMNI_CONTATO
+
+	annotation PBI_ResultType = Table
+

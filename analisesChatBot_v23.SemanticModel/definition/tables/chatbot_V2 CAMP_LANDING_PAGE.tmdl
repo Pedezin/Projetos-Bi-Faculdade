@@ -1,0 +1,57 @@
+table 'chatbot_V2 CAMP_LANDING_PAGE'
+	lineageTag: f73bb425-ebc3-429f-8c72-16c214d85495
+
+	column DATETIME_CONVERSA
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 0d69d299-1bd8-4aee-abbf-56211ebe20a8
+		summarizeBy: none
+		sourceColumn: DATETIME_CONVERSA
+
+		variation Variation
+			isDefault
+			relationship: 1784e48e-416f-4fb8-8711-1cf0fd587979
+			defaultHierarchy: LocalDateTable_cb09467d-4f8f-4ec6-93a4-162b043ea111.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column TELEFONE
+		dataType: int64
+		formatString: 0
+		lineageTag: 383118b9-5963-4008-ae0c-add6c298c563
+		summarizeBy: none
+		sourceColumn: TELEFONE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_CAMPANHA
+		dataType: int64
+		formatString: 0
+		lineageTag: 6960ad93-33db-4c84-a1e3-7fde041f4990
+		summarizeBy: sum
+		sourceColumn: ID_CAMPANHA
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_SUBCAMPANHA
+		dataType: int64
+		formatString: 0
+		lineageTag: 31b774f5-371c-425b-972e-ef788c7a2c2b
+		summarizeBy: none
+		sourceColumn: ID_SUBCAMPANHA
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'chatbot_V2 CAMP_LANDING_PAGE' = m
+		mode: import
+		source =
+				let
+				    Fonte = MySQL.Database("ls-a04f607f671036498978461f305b5a1f06f691d7.ckr1nz432eyx.us-east-2.rds.amazonaws.com", "chatbot_V2", [ReturnSingleDatabase=true]),
+				    chatbot_V2_RESULTADO = Fonte{[Schema="chatbot_V2",Item="CAMP_LANDING_PAGE"]}[Data]
+				in
+				    chatbot_V2_RESULTADO
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Exception
+

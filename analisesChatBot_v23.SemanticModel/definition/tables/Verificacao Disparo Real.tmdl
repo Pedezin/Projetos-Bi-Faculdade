@@ -1,0 +1,56 @@
+table 'Verificacao Disparo Real'
+	lineageTag: 7d02f5c0-47a7-4448-8263-8437e542b101
+
+	column TELEFONE
+		lineageTag: 7656ed2e-dbb9-4bf7-847a-9d815a5645fa
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Verificacao_Disparo[TELEFONE]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Campanha
+		lineageTag: e2dff19d-0fb5-4a3a-a9d2-318ce7f1f162
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Campanha]
+
+		annotation SummarizationSetBy = Automatic
+
+	column HORARIO_DISPARO
+		lineageTag: 7058accb-ceec-4ae3-ae6d-82919af3c339
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [HORARIO_DISPARO]
+
+		annotation SummarizationSetBy = Automatic
+
+	column HORARIO_RESPOSTA
+		lineageTag: 97071175-8608-4267-b967-0dab6b6fc582
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [HORARIO_RESPOSTA]
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATA
+		lineageTag: 51785b2b-7088-42b0-9972-50aa4553540d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [DATA]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Data Real' = DATE(YEAR('Verificacao Disparo Real'[DATA]), MONTH('Verificacao Disparo Real'[DATA]), DAY('Verificacao Disparo Real'[DATA]))
+		formatString: General Date
+		lineageTag: 5d248541-897a-43e3-bff8-ae763beb10f2
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Verificacao Disparo Real' = calculated
+		mode: import
+		source = SUMMARIZE(Verificacao_Disparo,Verificacao_Disparo[TELEFONE],"Campanha",MAX(Verificacao_Disparo[ID_CAMPANHA]),"HORARIO_DISPARO",MAX(Verificacao_Disparo[HORARIO_DISPARO]),"HORARIO_RESPOSTA",MAX(Verificacao_Disparo[HORARIO_RESPOSTA]),"DATA",MIN(Verificacao_Disparo[DATA]))
+
+	annotation PBI_Id = b01d97c2de684564b1d3eeb0e7c2c3ad
+

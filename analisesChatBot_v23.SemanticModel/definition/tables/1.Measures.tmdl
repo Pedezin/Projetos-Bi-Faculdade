@@ -1,0 +1,493 @@
+table '1.Measures'
+	lineageTag: d20a18ed-a6bb-4a18-be7e-a802d545d0cf
+
+	measure #CLIENTES = COUNT('chatbot_V2 CONVERSA'[TELEFONE])
+		formatString: 0
+		lineageTag: c367969b-8b49-4a6a-bff9-30d813f22149
+
+	measure #CLIENTES_CONTATADOS =
+			
+			CALCULATE(
+			    [#CLIENTES],
+			    REMOVEFILTERS(RESULTADOS_CLUSTER[RESULTADO]),
+			    RESULTADOS_CLUSTER[RESULTADO] = "CONTATADOS"
+			)
+		formatString: 0
+		lineageTag: aa012e89-f117-4ac9-838b-3bb60c80b6f4
+
+	measure %CLIENTES = if([#CLIENTES_CONTATADOS] >0,[#CLIENTES]/[#CLIENTES_CONTATADOS])
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 65b389cf-7ab6-45f9-a98d-c74970e02732
+
+	measure %GAP_CLIENTES_HSM = if(NOT(ISBLANK([%CLIENTES])), [%CLIENTES] - CALCULATE([%CLIENTES],REMOVEFILTERS('chatbot_V2 HSM'[ID_HSM])))
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: bb91c0e0-51c8-4fcd-8f86-a85d981388c0
+
+	measure HSM = RIGHT(SELECTEDVALUE('chatbot_V2 HSM'[ID_HSM]), 20)
+		lineageTag: a7af4381-c9c4-4c29-97de-3f87c5dce0d0
+
+	measure HSM_TEXTO = SELECTEDVALUE('chatbot_V2 HSM'[CONTEUDO], "Nenhum HSM selecionado")
+		lineageTag: 8e6e745d-657c-4747-9ec6-651e9b48b02f
+
+	measure Descricao_mapa_Brasil = IF(SELECTEDVALUE(RESULTADOS_CLUSTER[RESULTADO]) IN {"FALHA","INSUCESSO", "TELEMARKETING"},-[%CLIENTES], [%CLIENTES])
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 731a9f3b-80c5-4d21-a7de-49800a32a395
+
+	measure %CLIENTES_HSM = CALCULATE([%CLIENTES],REMOVEFILTERS('chatbot_V2 HSM'[ID_HSM]))
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: d188eaa3-f24a-4291-8b90-d4e8f55ac58a
+
+	measure Descricao_barras = IF(SELECTEDVALUE(RESULTADOS_CLUSTER[RESULTADO]) IN {"FALHA","INSUCESSO", "TELEMARKETING"},-[%GAP_CLIENTES_HSM], [%GAP_CLIENTES_HSM])
+		lineageTag: 6a06f532-4bee-47b1-b26a-5337d34d3cba
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure #CONTATOS_HORARIO = SUM(HORARIO_DISPARO[CONTATOS])
+		formatString: 0
+		lineageTag: 844d7eca-5845-4adf-aafc-5fd5db50ad02
+
+	measure #CONTATOS_HORARIO_TOTAL = CALCULATE([#CONTATOS_HORARIO] ,ALL(RESULTADOS_CLUSTER))
+		formatString: 0
+		lineageTag: 4a575e76-b625-4b8a-987e-36472a13b3d9
+
+	measure %CONTATOS_HORARIO = IF([#CONTATOS_HORARIO_TOTAL] >20, [#CONTATOS_HORARIO]/[#CONTATOS_HORARIO_TOTAL], BLANK())
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 96e36211-d19c-479d-a2c7-eb5b89a5867a
+
+	measure '$ custos gpt' =
+			SUMX(
+			    df,
+			    RELATED( modelos[preco_entrada] )
+			        * (df[n_context_tokens_total] - df[n_cached_context_tokens_total])
+			) +
+			SUMX(
+			    df,
+			    RELATED( modelos[preco_saida] )
+			        * df[n_generated_tokens_total]
+			) +
+			SUMX(
+			    df,
+			    RELATED( modelos[preco_cache] )
+			        * df[n_cached_context_tokens_total]
+			)
+		lineageTag: 016133a9-cca2-43f2-a687-c907261e39ba
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure #CLIENTES_RESPONDIDO =
+			
+			CALCULATE(
+			    [#CLIENTES],
+			    REMOVEFILTERS(RESULTADOS_CLUSTER[RESULTADO]),
+			    RESULTADOS_CLUSTER[RESULTADO] = "RESPONDIDO"
+			)
+		formatString: 0
+		lineageTag: 503c083d-814a-41a0-814f-9df3ccbe34ee
+
+	measure %RESPONDIDO = [#CLIENTES_RESPONDIDO]/[#CLIENTES_CONTATADOS]
+		formatString: 0%;-0%;0%
+		lineageTag: 01ed169d-08b5-4ed8-9346-56649888dbd8
+
+	measure #CLIENTES_AGENDADO =
+			
+			CALCULATE(
+			    [#CLIENTES_AGENDAMENTO_MULTIPLO],
+			    REMOVEFILTERS(RESULTADOS_CLUSTER[RESULTADO]) ,
+			    RESULTADOS_CLUSTER[RESULTADO] = "AGENDADO"
+			)
+		formatString: 0
+		lineageTag: 2bfc76f7-cde8-4cfb-92ed-936f134ed53b
+
+	measure %AGENDADO = [#CLIENTES_AGENDADO]/[#CLIENTES_CONTATADOS]
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 4e23bf9c-d4b6-4591-abf6-82bb0b611575
+
+	measure #CLIENTES_CONFIRMADO =
+			
+			CALCULATE(
+			    [#CLIENTES],
+			    REMOVEFILTERS(RESULTADOS_CLUSTER[RESULTADO]),
+			    RESULTADOS_CLUSTER[RESULTADO] = "CONFIRMADO"
+			)
+		formatString: 0
+		lineageTag: 79569705-0f43-4f08-bdbd-69135ac70127
+
+	measure %CONFIRMADO = [#CLIENTES_CONFIRMADO]/[#CLIENTES_CONTATADOS]
+		formatString: 0%;-0%;0%
+		lineageTag: 361ef59a-6023-4819-98b5-e162f56421b3
+
+	measure #CLIENTES_INSUCESSO =
+			
+			CALCULATE(
+			    [#CLIENTES],
+			    REMOVEFILTERS(RESULTADOS_CLUSTER[RESULTADO]),
+			    RESULTADOS_CLUSTER[RESULTADO] = "INSUCESSO"
+			)
+		formatString: 0
+		lineageTag: 7a81b193-5f83-4296-89f9-5c96b5399bd5
+
+	measure %INSUCESSO = [#CLIENTES_INSUCESSO]/[#CLIENTES_CONTATADOS]
+		formatString: 0%;-0%;0%
+		lineageTag: a7b23319-fbec-4577-aabf-a36552b06e35
+
+	measure '$ custos wpp' =
+			SUMX(
+			    FILTER('chatbot_V2 CONVERSA','chatbot_V2 CONVERSA'[ID_RESULTADO] IN {1,2,3,5,6,7,9,10,100}),
+			    IF(
+			        RELATED(HSM_CUSTO[TIPOLOGIA]) = "UTILITY" && 'chatbot_V2 CONVERSA'[DATETIME_CONVERSA] >= DATE(2024, 8, 1),
+			        0.008,
+			        RELATED(HSM_CUSTO[PRECO])
+			    )
+			)
+		lineageTag: 7c0ae3d0-8a39-4b7f-a185-c57bb761bc32
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'R$ custo total' = [Novo R$ custo GPT] + ([$ custos wpp]) * [#a. cotacao_dolar]
+		lineageTag: 0e1e052e-bd8a-4948-8ce6-d39f6174b796
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'R$ custo / agendamento' = IF([#CLIENTES_AGENDADO]>0, [R$ custo total] / [#CLIENTES_AGENDADO])
+		lineageTag: b05df751-d32b-482b-9671-3c962e3f8bb0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure #CLIENTES_AGENDAMENTO_MULTIPLO = SUM('chatbot_V2 CONVERSA'[AGENDAMENTO_MULTIPLO])
+		formatString: 0
+		lineageTag: 7ba9f243-9eef-4241-84a5-ec3a5079167d
+
+	measure '#a. cotacao_dolar' = 6.11
+		formatString: 0
+		lineageTag: 229dd1c7-2d45-4d45-ba34-0f5b407758e8
+
+	measure 'R$ custos gpt' = [$ custos gpt] * [#a. cotacao_dolar]
+		lineageTag: ea8f7890-cb68-43bc-9ee1-e690ffc6d25e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'R$ custos wpp' = [$ custos wpp] * [#a. cotacao_dolar]
+		lineageTag: e1575d83-35ec-4db6-822d-bd35aeb4c083
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure #CLIENTES_INTERVENCAO =
+			
+			CALCULATE(
+			    [#CLIENTES],
+			    REMOVEFILTERS(RESULTADOS_CLUSTER[RESULTADO]),
+			    RESULTADOS_CLUSTER[RESULTADO] = "INTERVENCAO"
+			)
+		formatString: 0
+		lineageTag: e8c78990-3a6f-45a8-82db-94aed90daea1
+
+	measure %INTERVENCAO = [#CLIENTES_INTERVENCAO]/[#CLIENTES_RESPONDIDO]
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 8aa66ba1-3be7-48a0-b0d2-65130a215cac
+
+	measure #CLIENTES_SUCESSO_REMARKETING =
+			
+			CALCULATE(
+			    [#CLIENTES],
+			    REMOVEFILTERS(RESULTADOS_CLUSTER[RESULTADO]),
+			    RESULTADOS_CLUSTER[RESULTADO] = "SUCESSO_REMARKETING"
+			)
+		formatString: 0
+		lineageTag: be7eee6a-e67f-44a9-99a1-ddaf890b0b55
+
+	measure %SUCESSO_REMARKETING = [#CLIENTES_SUCESSO_REMARKETING]/[#CLIENTES_CONTATADOS]
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 50b1b439-7cef-44e0-a7b0-e55dd8167161
+
+	measure 'R$ custo / confirmacao' = IF([#CLIENTES_CONFIRMADO]>0, [R$ custo total] / [#CLIENTES_CONFIRMADO])
+		lineageTag: 839c1139-775a-4c6a-bc7e-491e9aeffa52
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'R$ custo / sucesso' = IF([#CLIENTES_SUCESSO_REMARKETING]>0, [R$ custo total] / [#CLIENTES_SUCESSO_REMARKETING])
+		lineageTag: 4af9cd2c-c866-4c25-8a71-18bce660479a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure #OMNICLIENTES = COUNT('chatbot_V2 OMNI_CONVERSA'[ID_CONTATO])
+		formatString: 0
+		lineageTag: 2246e63d-afc1-4c49-b5a6-477d860b43d2
+
+	measure #OMNICLIENTES_AGENDAMENTO_MULTIPLO = SUM('chatbot_V2 OMNI_CONVERSA'[AGENDAMENTO_MULTIPLO])
+		formatString: 0
+		lineageTag: ed7540eb-0f34-4ac2-bc09-430f7deeb279
+
+	measure #OMNICLIENTES_AGENDADO =
+			
+			CALCULATE(
+			    [#OMNICLIENTES_AGENDAMENTO_MULTIPLO],
+			    REMOVEFILTERS(OMNI_RESULTADOS_CLUSTER[RESULTADO]) ,
+			    OMNI_RESULTADOS_CLUSTER[RESULTADO] = "AGENDADO"
+			)
+		formatString: 0
+		lineageTag: e2d69931-79b6-445d-9b26-71060d10f24f
+
+	measure #OMNICLIENTES_CONFIRMADO =
+			
+			CALCULATE(
+			    [#OMNICLIENTES],
+			    REMOVEFILTERS(OMNI_RESULTADOS_CLUSTER[RESULTADO]),
+			    OMNI_RESULTADOS_CLUSTER[RESULTADO] = "CONFIRMADO"
+			)
+		formatString: 0
+		lineageTag: 74e880cf-5dba-42bd-9e17-ff5dcc631391
+
+	measure #OMNICLIENTES_CONTATADOS =
+			
+			CALCULATE(
+			    [#OMNICLIENTES],
+			    REMOVEFILTERS(OMNI_RESULTADOS_CLUSTER[RESULTADO]),
+			    OMNI_RESULTADOS_CLUSTER[RESULTADO] = "CONTATADOS"
+			)
+		formatString: 0
+		lineageTag: b636b2c0-2546-4a8b-a5ce-c06e3e393fd5
+
+	measure #OMNICLIENTES_INSUCESSO =
+			
+			CALCULATE(
+			    [#OMNICLIENTES],
+			    REMOVEFILTERS(OMNI_RESULTADOS_CLUSTER[RESULTADO]),
+			    OMNI_RESULTADOS_CLUSTER[RESULTADO] = "INSUCESSO"
+			)
+		formatString: 0
+		lineageTag: c5830ec0-aded-4479-9912-513d4db23dff
+
+	measure #OMNICLIENTES_INTERVENCAO =
+			
+			CALCULATE(
+			    [#OMNICLIENTES],
+			    REMOVEFILTERS(OMNI_RESULTADOS_CLUSTER[RESULTADO]),
+			    OMNI_RESULTADOS_CLUSTER[RESULTADO] = "INTERVENCAO"
+			)
+		formatString: 0
+		lineageTag: 43250589-a50c-41ce-8a31-0aadea4990a8
+
+	measure #OMNICLIENTES_RESPONDIDO =
+			
+			CALCULATE(
+			    [#OMNICLIENTES],
+			    REMOVEFILTERS(OMNI_RESULTADOS_CLUSTER[RESULTADO]),
+			    OMNI_RESULTADOS_CLUSTER[RESULTADO] = "RESPONDIDO"
+			)
+		formatString: 0
+		lineageTag: 09a1d4f4-38cd-4ece-8c7c-fc7f43e01ec2
+
+	measure %OMNIAGENDADO = [#OMNICLIENTES_AGENDADO]/[#OMNICLIENTES_CONTATADOS]
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 6872b608-9f3d-498e-bed0-6481e42342d1
+
+	measure %OMNICLIENTES = if([#OMNICLIENTES_CONTATADOS] >0,[#OMNICLIENTES]/[#OMNICLIENTES_CONTATADOS])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 7ebc1a29-6b26-4c25-97c8-68bba882bcd3
+
+	measure %OMNICONFIRMADO = [#OMNICLIENTES_CONFIRMADO]/[#OMNICLIENTES_CONTATADOS]
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 48453787-8fb2-4c84-b7e7-457980a61eb4
+
+	measure %OMNIINSUCESSO = [#OMNICLIENTES_INSUCESSO]/[#OMNICLIENTES_CONTATADOS]
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 23d16f88-2ad0-4db3-8e31-cf74d5c14fcd
+
+	measure %OMNIINTERVENCAO = [#OMNICLIENTES_INTERVENCAO]/[#OMNICLIENTES_RESPONDIDO]
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: b94b3e33-ceae-437a-a2c2-75d8ab8c2424
+
+	measure %OMNIRESPONDIDO = [#OMNICLIENTES_RESPONDIDO]/[#OMNICLIENTES_CONTATADOS]
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 5b703b3b-c42b-457d-beb3-7666fbe55fcb
+
+	measure 'R$ omnicusto / agendamento' = IF([#OMNICLIENTES_AGENDADO]>0, [R$ custo total] / [#OMNICLIENTES_AGENDADO])
+		lineageTag: b358e977-1da0-4b76-bb4b-5aa6e720ba84
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Dias_Agendamento = DATEDIFF(MAX('chatbot_V2 FLAG_HISTORICO'[DATA]), MAX('chatbot_V2 AGENDAMENTO_REALIZADO'[DATA_AGENDAMENTO]),DAY)
+		formatString: 0
+		lineageTag: 2710a55a-8c6e-41ea-9448-df8fde80ffd3
+
+	measure Clientes_aux = DISTINCTCOUNT(Flag_AUX[TELEFONE])
+		formatString: 0
+		lineageTag: 023d9e36-128b-4b93-b6df-b916fc07156a
+
+	measure 'Disparos respondidos' = COUNTROWS(filter('Verificacao Disparo Real','Verificacao Disparo Real'[HORARIO_RESPOSTA] <> blank()))
+		formatString: 0
+		lineageTag: a838f224-a2a3-4db6-a640-031aca2bfd5b
+
+	measure Clientes_disparados = COUNT('Verificacao Disparo Real'[TELEFONE])
+		formatString: 0
+		lineageTag: 939561fc-b20d-4524-85ab-1d80fb432040
+
+	measure 'Resposta disparo' = DIVIDE([Disparos respondidos],[Clientes_disparados],0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: e326bf52-c7a3-4a07-a966-315c94b49059
+
+	measure 'Resposta em minutos' = DIVIDE()
+		lineageTag: 751a1033-540e-4681-bb9f-0175e75b2d10
+
+	measure #RESPONDIDOS_REMARKETING = IF(COUNT(remarketing_resposta[RESPOSTA])>[#CLIENTES_SUCESSO_REMARKETING],[#CLIENTES_SUCESSO_REMARKETING],SUM(remarketing_resposta[RESPOSTA]))
+		formatString: 0
+		lineageTag: 4cf2a967-55b7-4f0e-9197-75a5ffb73398
+
+	measure %RESPONDIDO_REMARKETING = DIVIDE([#RESPONDIDOS_REMARKETING],[#CLIENTES_SUCESSO_REMARKETING],0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: c1baaf87-b319-4a59-b1aa-b26a8d9d0c66
+
+	measure 'R$ custos gpt remarketing' = [Novo R$ custo GPT]*[#CLIENTES_RESPONDIDO]
+		lineageTag: c78b57e6-e5e0-46a9-9857-eea26ef6859d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'R$ custoWPP / agendamento' = IF([#CLIENTES_AGENDADO]>0, [R$ custos wpp] / [#CLIENTES_AGENDADO])
+		lineageTag: 4883eb78-9f9c-496a-be4d-9b9e88727a9d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'R$ custoGPT / resposta' = IF([#CLIENTES_RESPONDIDO]>0, [Novo R$ custo GPT] / [#CLIENTES_RESPONDIDO])
+		lineageTag: 742e0f40-f480-407b-b423-844b5cb894a3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Remarketing_sem_resposta = ```
+			COUNT(sem_resposta_remarketing[TELEFONE]) 
+			```
+		formatString: 0
+		lineageTag: 8afedaf0-e408-4326-b1c2-82fccc82fb8b
+
+	measure Total_conversas = DISTINCTCOUNT(Mensagem_HSM[Key])
+		formatString: 0
+		lineageTag: 7a19831a-07f6-420e-8dd1-fe1726909988
+
+	measure #CLIENTES_FLOWS = COUNT(Flows_Unico[TELEFONE])
+		formatString: 0
+		lineageTag: b84d305d-2e8d-4ff6-9edf-d541e2b8bd71
+
+	measure 'Novo R$ custo GPT' = ```
+			
+			   VAR CotacaoAtual = 
+			       CALCULATE(
+			           MAX(historico_cotacao_dolar[cotacaoCompra]),
+			           FILTER(
+			            historico_cotacao_dolar,
+			            historico_cotacao_dolar[data] = MAX(CALENDARIO[Date])
+			        )
+			       )
+			   RETURN
+			       SUMX(
+			           df,
+			           [$ custos gpt] * CotacaoAtual
+			       )
+			```
+		formatString: 0
+		lineageTag: 499bc780-bd32-4052-bb1a-2dd094cc9b6a
+
+	measure '% INDICAÇÕES' = ```
+			
+			VAR TelefonesAmbas = 
+			    DISTINCTCOUNT(POS_VENDAS_INDICACAO[TELEFONE])
+			
+			VAR TotalTelefones = 
+			    COUNTROWS(
+			        FILTER(
+			            'chatbot_V2 CONVERSA',
+			            'chatbot_V2 CONVERSA'[ID_CAMPANHA] = "29"
+			        )
+			    )
+			
+			RETURN 
+			    DIVIDE(TelefonesAmbas, TotalTelefones, 0)
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 5d37f291-5858-4c84-b982-549f32e930ef
+
+	measure 'Avaliação Média' = DIVIDE(SUM(POS_VENDAS_AVALIACAO[NOTA]), COUNTROWS(POS_VENDAS_AVALIACAO), 0)
+		lineageTag: 57ab6bf8-dc2f-4cb3-a072-fad6ba1f1826
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% AVALIAÇÕES ATENDIMENTO' = ```
+			
+			VAR TelefonesAmbas =
+			    COUNTROWS(
+			        FILTER(
+			            POS_VENDAS_AVALIACAO,
+			            POS_VENDAS_AVALIACAO[ID_CAMPANHA] = 25
+			        )
+			    )
+			
+			VAR TotalTelefones = 
+			    COUNTROWS(
+			        FILTER(
+			            'chatbot_V2 CONVERSA',
+			            'chatbot_V2 CONVERSA'[ID_CAMPANHA] = "25"
+			        )
+			    )
+			
+			RETURN 
+			    DIVIDE(TelefonesAmbas, TotalTelefones, 0)
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 9c37fe49-a6ba-4b87-91ec-4be5f3ace37a
+
+	measure #INDICACOES = ```
+			
+			    COUNTROWS(POS_VENDAS_INDICACAO)
+			```
+		formatString: 0
+		lineageTag: e2fcb802-534f-479a-abfb-e4dcc2634546
+
+	measure '% AVALIAÇÕES PRODUTO' = ```
+			
+			VAR TelefonesAmbas =
+			    COUNTROWS(
+			        FILTER(
+			            POS_VENDAS_AVALIACAO,
+			            POS_VENDAS_AVALIACAO[ID_CAMPANHA] = 29
+			        )
+			    )
+			
+			VAR TotalTelefones = 
+			    COUNTROWS(
+			        FILTER(
+			            'chatbot_V2 CONVERSA',
+			            'chatbot_V2 CONVERSA'[ID_CAMPANHA] = "29"
+			        )
+			    )
+			
+			RETURN 
+			    DIVIDE(TelefonesAmbas, TotalTelefones, 0)
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: e96f3fc1-4491-442e-8ea3-2086db97847c
+
+	measure #AVALIACOES = COUNTROWS(POS_VENDAS_AVALIACAO)
+		formatString: 0
+		lineageTag: 69acedc2-369d-47ee-9944-cdd6b660b1a8
+
+	column z
+		formatString: 0
+		lineageTag: b10c6f20-c82b-4380-929e-2e9f7318b146
+		summarizeBy: sum
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	column NPS = Count('chatbot_V2 CONVERSA'[NPS])
+		formatString: 0
+		lineageTag: 10ed9b02-7c42-417c-ae25-06a8aa69d905
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition '1.Measures' = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = c295643609054935beca4d7d2798c469
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

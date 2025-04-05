@@ -1,0 +1,75 @@
+table POS_VENDAS_INDICACAO
+	lineageTag: 980e0994-d7d3-4361-addc-6c4ab0f9e9f3
+
+	column TELEFONE
+		dataType: int64
+		formatString: 0
+		lineageTag: f146b28a-4d75-428a-bf8d-0dd5d06174a0
+		summarizeBy: none
+		sourceColumn: TELEFONE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATA_COMPRA
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f73a168b-30ab-4509-a8db-36abb627bfa4
+		summarizeBy: none
+		sourceColumn: DATA_COMPRA
+
+		variation Variation
+			isDefault
+			relationship: c10753ec-5674-4abe-90ff-567d71a0d341
+			defaultHierarchy: LocalDateTable_c932bf8c-27e7-4bdf-963c-6716c1605875.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column TELEFONE_INDICADO
+		dataType: int64
+		formatString: 0
+		lineageTag: fe65fc9f-2aa2-424e-9623-90c542b8d6f9
+		summarizeBy: sum
+		sourceColumn: TELEFONE_INDICADO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOME_INDICADO
+		dataType: string
+		lineageTag: c16486bd-8cca-42b4-a16b-0864082537ba
+		summarizeBy: none
+		sourceColumn: NOME_INDICADO
+
+		annotation SummarizationSetBy = Automatic
+
+	column EMAIL_INDICADO
+		dataType: string
+		lineageTag: ca19d3e6-7f00-42f3-bb0a-8b65277cf1c2
+		summarizeBy: none
+		sourceColumn: EMAIL_INDICADO
+
+		annotation SummarizationSetBy = Automatic
+
+	column Data = DATE(YEAR(POS_VENDAS_INDICACAO[DATA_COMPRA]),MONTH(POS_VENDAS_INDICACAO[DATA_COMPRA]),DAY(POS_VENDAS_INDICACAO[DATA_COMPRA]))
+		formatString: General Date
+		lineageTag: 718c4845-dfc8-4082-9b13-0a85a5c8c0dd
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: 9e30d079-9b33-46cd-9062-14750a1a4594
+			defaultHierarchy: LocalDateTable_c472f992-6ede-4c78-911b-f4a1245fede8.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition POS_VENDAS_INDICACAO = m
+		mode: import
+		source =
+				let
+				    Fonte = MySQL.Database("ls-a04f607f671036498978461f305b5a1f06f691d7.ckr1nz432eyx.us-east-2.rds.amazonaws.com:3306", "chatbot_V2", [ReturnSingleDatabase=true, Query="SELECT * FROM POS_VENDAS_INDICACAO;", CreateNavigationProperties=false])
+				in
+				    Fonte
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+

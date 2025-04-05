@@ -1,0 +1,43 @@
+table campanha_api
+	lineageTag: abf6d0d4-5a58-4c6e-a390-9392a0cab6f8
+
+	column api_key
+		dataType: string
+		lineageTag: 9843e446-3d04-4129-9b2f-278eacd86ecf
+		summarizeBy: none
+		sourceColumn: api_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column campanha
+		dataType: string
+		lineageTag: 5146394a-8aee-4678-b959-0d8ffc9cff3e
+		summarizeBy: none
+		sourceColumn: campanha
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_campanha
+		dataType: int64
+		formatString: 0
+		lineageTag: dc7bc622-65c5-4b88-bd68-d7c15ad0fa9c
+		summarizeBy: none
+		sourceColumn: id_campanha
+
+		annotation SummarizationSetBy = Automatic
+
+	partition campanha_api = m
+		mode: import
+		source =
+				let
+				    Fonte = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("lVTRktsgDPyXPN/NgN1ceo8KVmwag1zDJdO5ueH//6I4eBLk4HP7hpY10molf37uaEALOsCgwxn/7F52Fij4EdQZoYEYv8rd18uSF3pS0K+zVQcXDB0Z6qkN2jb69wcGMLolF1lPQF3KMX/+r1kUWIU9NLcHH9++ViUu2ZMeDSigbbJH53Gqaps6osLB60vx1Vnef3aDyWIBe9VScB1dp2bRfBD5fS4iP3N7eV94xIi50PwsRaGocGzudaWzFKKsMV0vYym+9SWRNqxhtWyNxyL/Bt3BAD5ynfb4jfEL2hxO8qoVD0LVcRsSIH/k/D4uhQvXDnx8cYjXT4Dcs/Vq0TZg0Hq6lTJVkGH3+mTNDTcwntFr294szyP5VhyN0BK1PeYT8oBkeZxCP4QTOJVKWIHfn+Ub9HCXPgesSydQeCQ6s8ktgvKdb6vz0I5gGKeMVqKYUZGZOuvyhBlWyXK+jFIEq6rcwSse43h61r4HJg/r/6I07CVMinoxopdoRUzqabTzr2KB7MsmhSOacIk5iNnF4ENZGPz6cIuxuENvaxt0eFqhhPxcX6FCicWrWqxIlPuGi0tALVf4tVjwE1BHg7/+Ag==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [api_key = _t, campanha = _t, id_campanha = _t]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(Fonte,{{"api_key", type text}, {"campanha", type text}}),
+				    #"Linhas Classificadas" = Table.Sort(#"Tipo Alterado",{{"campanha", Order.Ascending}}),
+				    #"Tipo Alterado1" = Table.TransformColumnTypes(#"Linhas Classificadas",{{"id_campanha", Int64.Type}})
+				in
+				    #"Tipo Alterado1"
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navegação
+

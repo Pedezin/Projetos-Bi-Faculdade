@@ -1,0 +1,180 @@
+table 'chatbot_V2 CONVERSA'
+	lineageTag: b93dfceb-1710-496f-88b9-21892c90fc1b
+
+	column DATETIME_CONVERSA
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: cdeaca95-a693-4f52-942a-895e8cfa5510
+		summarizeBy: none
+		sourceColumn: DATETIME_CONVERSA
+
+		variation Variation
+			isDefault
+			relationship: 120f6831-55d3-4cfc-9383-205e289176ad
+			defaultHierarchy: LocalDateTable_45b5f7c8-d182-4a9b-8325-5f06b5698700.'Hierarquia de datas'
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column TELEFONE
+		dataType: int64
+		formatString: 0
+		lineageTag: 516735cf-71bd-4d30-a5ac-6b618a57d743
+		summarizeBy: none
+		sourceColumn: TELEFONE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_HSM
+		dataType: string
+		lineageTag: 37d30265-0292-47dd-b68d-2b27470bda8c
+		summarizeBy: none
+		sourceColumn: ID_HSM
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_LAST_FLAG
+		dataType: int64
+		formatString: 0
+		lineageTag: 477dd56e-39af-4883-b5b0-e19e787077e4
+		summarizeBy: sum
+		sourceColumn: ID_LAST_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRECO
+		dataType: double
+		lineageTag: 8ad6d210-c1e1-4039-b398-da3c80e383f6
+		summarizeBy: sum
+		sourceColumn: PRECO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BANCO_DADOS
+		dataType: int64
+		formatString: 0
+		lineageTag: 4bb91699-791d-4cc8-9bd4-cd4d7d84a401
+		summarizeBy: sum
+		sourceColumn: BANCO_DADOS
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_RESULTADO
+		dataType: int64
+		formatString: 0
+		lineageTag: 6afd60e2-505c-4171-9878-c779e10d284d
+		summarizeBy: none
+		sourceColumn: ID_RESULTADO
+
+		annotation SummarizationSetBy = Automatic
+
+	column TELEFONE_WPP
+		dataType: int64
+		formatString: 0
+		lineageTag: 73d93ee3-0d51-4ea3-bb5d-8c8f046aed07
+		summarizeBy: sum
+		sourceColumn: TELEFONE_WPP
+
+		annotation SummarizationSetBy = Automatic
+
+	column AGENDAMENTO_MULTIPLO
+		dataType: int64
+		formatString: 0
+		lineageTag: f4ce9b22-2ad9-491a-b722-3a53b409d6cb
+		summarizeBy: sum
+		sourceColumn: AGENDAMENTO_MULTIPLO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NPS
+		dataType: int64
+		formatString: 0
+		lineageTag: 6bcb7a03-3b0c-4449-a858-dbcfd2210860
+		summarizeBy: sum
+		sourceColumn: NPS
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_HSM_SECUNDARIO
+		dataType: string
+		lineageTag: 434e2d1b-284b-4ffd-a1db-cd4aa7af18d1
+		summarizeBy: none
+		sourceColumn: ID_HSM_SECUNDARIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column URL_FORMS
+		dataType: string
+		lineageTag: ee2080a2-147a-4113-818d-b0d13aa8afb6
+		summarizeBy: none
+		sourceColumn: URL_FORMS
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_CAMPANHA
+		dataType: string
+		lineageTag: f5947d4e-cad2-4d0a-a453-2bcaa29cf998
+		summarizeBy: none
+		sourceColumn: ID_CAMPANHA
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATA
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: d2652dc9-a02a-45e3-bce2-98d18a8a89b8
+		summarizeBy: none
+		sourceColumn: DATA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ID_REMARKETING
+		dataType: int64
+		formatString: 0
+		lineageTag: 6d353f33-269b-4535-a1c8-baa65da865c9
+		summarizeBy: none
+		sourceColumn: ID_REMARKETING
+
+		annotation SummarizationSetBy = Automatic
+
+	column ATIVO
+		dataType: int64
+		formatString: 0
+		lineageTag: 2b4561f2-28dc-40cb-aa12-ab9a29762962
+		summarizeBy: sum
+		sourceColumn: ATIVO
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'chatbot_V2 CONVERSA' = m
+		mode: import
+		source =
+				let
+				    Fonte = MySQL.Database("ls-a04f607f671036498978461f305b5a1f06f691d7.ckr1nz432eyx.us-east-2.rds.amazonaws.com", "chatbot_V2", [ReturnSingleDatabase=true, Query="SELECT * FROM CONVERSA WHERE DATETIME_CONVERSA >= DATE_SUB(NOW(), INTERVAL 12 MONTH) AND TELEFONE NOT IN (9223372036854775807)", CommandTimeout=#duration(0, 0, 10, 0)]),
+				    #"Consultas Mescladas" = Table.NestedJoin(Fonte, {"DATETIME_CONVERSA", "TELEFONE", "ID_CAMPANHA"}, #"chatbot_V2 FLAG_HISTORICO", {"DATETIME_CONVERSA", "TELEFONE", "ID_CAMPANHA"}, "chatbot_V2 FLAG_HISTORICO", JoinKind.LeftOuter),
+				    #"chatbot_V2 FLAG_HISTORICO Expandido" = Table.ExpandTableColumn(#"Consultas Mescladas", "chatbot_V2 FLAG_HISTORICO", {"ID_FLAG"}, {"chatbot_V2 FLAG_HISTORICO.ID_FLAG"}),
+				    #"Personalização Adicionada" = Table.AddColumn(#"chatbot_V2 FLAG_HISTORICO Expandido", "Personalizar", each if [ID_RESULTADO] = 3 and List.Contains({1, 8, 14, 37}, [ID_CAMPANHA]) and [chatbot_V2 FLAG_HISTORICO.ID_FLAG] <> 5 then 100
+				        else [ID_RESULTADO]),
+				    #"Colunas Removidas" = Table.RemoveColumns(#"Personalização Adicionada",{"ID_RESULTADO", "chatbot_V2 FLAG_HISTORICO.ID_FLAG"}),
+				    #"Colunas Renomeadas" = Table.RenameColumns(#"Colunas Removidas",{{"Personalizar", "ID_RESULTADO"}}),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Colunas Renomeadas",{{"ID_RESULTADO", Int64.Type}}),
+				    #"Personalização Adicionada1" = Table.AddColumn(#"Tipo Alterado", "Personalizar", each [ID_CAMPANHA] + 100 * [BANCO_DADOS]),
+				    #"Colunas Removidas1" = Table.RemoveColumns(#"Personalização Adicionada1",{"ID_CAMPANHA"}),
+				    #"Colunas Renomeadas1" = Table.RenameColumns(#"Colunas Removidas1",{{"Personalizar", "ID_CAMPANHA"}}),
+				    #"Personalização Adicionada2" = Table.AddColumn(#"Colunas Renomeadas1", "DATA", each DateTime.Date([DATETIME_CONVERSA])),
+				    #"Tipo Alterado1" = Table.TransformColumnTypes(#"Personalização Adicionada2",{{"DATA", type date}}),
+				    #"Duplicatas Removidas" = Table.Distinct(#"Tipo Alterado1", {"DATETIME_CONVERSA", "TELEFONE"})
+				in
+				    #"Duplicatas Removidas"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+

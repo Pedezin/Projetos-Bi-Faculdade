@@ -1,0 +1,48 @@
+table Flag_AUX
+	lineageTag: 284939c1-1e2b-4a2b-91f0-ea3ecac484cd
+
+	column TELEFONE
+		formatString: 0
+		lineageTag: ad0f54f7-ded8-4d32-a719-2b69c43c67c1
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: chatbot_V2 FLAG_HISTORICO[TELEFONE]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Last_Date
+		formatString: General Date
+		lineageTag: c8ad433e-cec8-49cf-bf27-46f7aa38875d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Last_Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Data_Agendada
+		formatString: General Date
+		lineageTag: 65251952-1d6c-41d5-a8c1-c9476ffdd2de
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Data_Agendada]
+
+		variation Variation
+			isDefault
+			relationship: 2574e241-379f-48b2-96cf-04e77bfde305
+			defaultHierarchy: LocalDateTable_2021c061-434d-4dc1-b42d-f9c8c627971c.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Diff_agendamento = DATEDIFF(Flag_AUX[Last_Date],Flag_AUX[Data_Agendada],DAY)
+		formatString: 0
+		lineageTag: 73619b15-9fd4-4131-9832-b9b0bc6f368b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Flag_AUX = calculated
+		mode: import
+		source = SUMMARIZE('chatbot_V2 FLAG_HISTORICO','chatbot_V2 FLAG_HISTORICO'[TELEFONE], "Last_Date", MAX('chatbot_V2 FLAG_HISTORICO'[DATA]),"Data_Agendada", MAX('chatbot_V2 AGENDAMENTO_REALIZADO'[DATA_AGENDAMENTO]))
+
+	annotation PBI_Id = 606f26beb11940f694159caa53763646
+

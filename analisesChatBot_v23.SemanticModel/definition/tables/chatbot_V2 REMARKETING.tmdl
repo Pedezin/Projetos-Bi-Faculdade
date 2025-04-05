@@ -1,0 +1,41 @@
+table 'chatbot_V2 REMARKETING'
+	lineageTag: 67383948-7538-4a53-b5e0-30c44502c08c
+
+	column ID_REMARKETING
+		dataType: int64
+		formatString: 0
+		lineageTag: 9ff15f85-4328-4a8f-be68-b5f822a54453
+		summarizeBy: none
+		sourceColumn: ID_REMARKETING
+
+		annotation SummarizationSetBy = Automatic
+
+	column STRING_CAMPANHA
+		dataType: string
+		lineageTag: 3bc6ff1c-5e7e-49ab-8b46-1a6a1db86d54
+		summarizeBy: none
+		sourceColumn: STRING_CAMPANHA
+
+		annotation SummarizationSetBy = Automatic
+
+	column STRING_DESCONTO
+		dataType: string
+		lineageTag: 7b22950a-f643-44d4-9014-eb9ef2f9c476
+		summarizeBy: none
+		sourceColumn: STRING_DESCONTO
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'chatbot_V2 REMARKETING' = m
+		mode: import
+		source =
+				let
+				    Fonte = MySQL.Database("ls-a04f607f671036498978461f305b5a1f06f691d7.ckr1nz432eyx.us-east-2.rds.amazonaws.com", "chatbot_V2", [ReturnSingleDatabase=true]),
+				    chatbot_V2_RESULTADO = Fonte{[Schema="chatbot_V2",Item="REMARKETING"]}[Data]
+				in
+				    chatbot_V2_RESULTADO
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navegação
+

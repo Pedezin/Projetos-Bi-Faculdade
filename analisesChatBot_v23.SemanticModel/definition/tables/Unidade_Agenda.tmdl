@@ -1,0 +1,40 @@
+table Unidade_Agenda
+	lineageTag: 10e1b0a8-71ba-481e-a32f-6967d8709e69
+
+	column TELEFONE
+		formatString: 0
+		lineageTag: 58ed28de-aecb-4f20-b9f0-207d448adf2d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: chatbot_V2 AGENDAMENTO_REALIZADO[TELEFONE]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Data_Agendada
+		formatString: General Date
+		lineageTag: 9d0b62cf-6f23-46fc-994c-382142603da0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Data_Agendada]
+
+		variation Variation
+			isDefault
+			relationship: 992478f1-8905-4609-aa8b-9515b27c5d08
+			defaultHierarchy: LocalDateTable_ab9c1f4f-e3f6-4614-990f-04d4f4783f38.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Unidade
+		lineageTag: 65bc4bc8-8a87-4ff0-894c-ccc7956903a3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Unidade]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Unidade_Agenda = calculated
+		mode: import
+		source = SUMMARIZE('chatbot_V2 AGENDAMENTO_REALIZADO','chatbot_V2 AGENDAMENTO_REALIZADO'[TELEFONE],"Data_Agendada", MAX('chatbot_V2 AGENDAMENTO_REALIZADO'[DATA_AGENDAMENTO]),"Unidade", MAX('chatbot_V2 AGENDAMENTO_REALIZADO'[UNIDADE_PSD]))
+
+	annotation PBI_Id = aac031c9fe9341e0be08a4e987859536
+

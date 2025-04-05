@@ -1,0 +1,33 @@
+table 'chatbot_V2 RESULTADO'
+	lineageTag: f514f54e-c321-46ee-a603-807380ef7d1a
+
+	column ID_RESULTADO
+		dataType: int64
+		formatString: 0
+		lineageTag: 45e119f2-6c6f-40fe-8dc2-67e4f3ca8be9
+		summarizeBy: sum
+		sourceColumn: ID_RESULTADO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOME_RESULTADO
+		dataType: string
+		lineageTag: 033f0d6e-2833-4277-94c9-e97d38acd7b6
+		summarizeBy: none
+		sourceColumn: NOME_RESULTADO
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'chatbot_V2 RESULTADO' = m
+		mode: import
+		source =
+				let
+				    Fonte = MySQL.Database("ls-a04f607f671036498978461f305b5a1f06f691d7.ckr1nz432eyx.us-east-2.rds.amazonaws.com", "chatbot_V2", [ReturnSingleDatabase=true]),
+				    chatbot_V2_RESULTADO = Fonte{[Schema="chatbot_V2",Item="RESULTADO"]}[Data]
+				in
+				    chatbot_V2_RESULTADO
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+

@@ -1,0 +1,18 @@
+table 'Id Lead Unico'
+	lineageTag: d9bc4c27-e30c-4277-8bef-11ccb97cb6a7
+
+	column id_lead
+		formatString: 0
+		lineageTag: a90bdd4c-a166-4123-a525-5b45b72895df
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: db_marketing tb_conversao_leads_faturamento[id_lead]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Id Lead Unico' = calculated
+		mode: import
+		source = SUMMARIZE('db_marketing tb_conversao_leads_faturamento','db_marketing tb_conversao_leads_faturamento'[id_lead])
+
+	annotation PBI_Id = 7600a9b52a664fd2b39acabb80e3bcc3
+

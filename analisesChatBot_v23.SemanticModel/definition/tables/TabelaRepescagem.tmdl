@@ -1,0 +1,42 @@
+table TabelaRepescagem
+	lineageTag: 59adf20c-4882-46c9-b436-23ef71f6ab46
+
+	column Key
+		lineageTag: 11092198-036d-4ef2-ab72-55f928510ed3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Flag_repescagem[Key]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Campanha
+		formatString: 0
+		lineageTag: 8b5d5fdb-1641-4c90-acc6-4094421e46e7
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Campanha]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Numero Insistências'
+		formatString: 0
+		lineageTag: ad5e825f-f057-4dca-a0e5-f2b0463ef0c4
+		summarizeBy: sum
+		sourceColumn: [SomaHSM]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition TabelaRepescagem = calculated
+		mode: import
+		source = ```
+				
+				SUMMARIZE(
+				    Flag_repescagem, 
+				    Flag_repescagem[Key],
+				    "Campanha", MAX(Flag_repescagem[ID_CAMPANHA]),
+				    "SomaHSM", MAX(Flag_repescagem[Vezes])
+				)
+				```
+
+	annotation PBI_Id = 65e80b70028e4a73a4f5b2cb9a845ec6
+

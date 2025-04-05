@@ -1,0 +1,26 @@
+table OMNI_RESULTADOS_CLUSTER
+	lineageTag: 870c5b1e-7320-4702-bebf-5cf550bfc80d
+
+	column RESULTADO
+		lineageTag: 51661d6d-9537-45d5-b70d-dda9cb396b28
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: RESULTADOS_CLUSTER[RESULTADO]
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_RESULTADO
+		formatString: 0
+		lineageTag: 428162bf-19ed-414a-b7f0-13dda889b2ad
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: RESULTADOS_CLUSTER[ID_RESULTADO]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition OMNI_RESULTADOS_CLUSTER = calculated
+		mode: import
+		source = ALL(RESULTADOS_CLUSTER)
+
+	annotation PBI_Id = 5a6389f71ede4b09b56a1025f94d3ccd
+

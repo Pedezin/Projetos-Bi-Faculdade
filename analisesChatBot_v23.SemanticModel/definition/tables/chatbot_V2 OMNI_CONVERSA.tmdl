@@ -1,0 +1,79 @@
+table 'chatbot_V2 OMNI_CONVERSA'
+	lineageTag: a955b541-32fa-4963-9506-ce61507b8622
+
+	column ID_CONTATO
+		dataType: string
+		lineageTag: 9de92dd8-f1bb-4ecf-878e-6c3e5a8399fe
+		summarizeBy: none
+		sourceColumn: ID_CONTATO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATETIME_CONVERSA
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2c35ef50-7f84-40a6-8ff3-a0ed9c89b128
+		summarizeBy: none
+		sourceColumn: DATETIME_CONVERSA
+
+		variation Variation
+			isDefault
+			relationship: a060ff2c-011a-4c4f-8bed-0abca37f0397
+			defaultHierarchy: LocalDateTable_d37111f9-bbe6-448c-b0c8-6bd8b8f1c8b4.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_CAMPANHA
+		dataType: int64
+		formatString: 0
+		lineageTag: 29a76b9d-c094-4712-b93f-3f36d7bdaece
+		summarizeBy: sum
+		sourceColumn: ID_CAMPANHA
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_RESULTADO
+		dataType: int64
+		formatString: 0
+		lineageTag: 46e534aa-5667-47be-b24e-83b838b7293e
+		summarizeBy: none
+		sourceColumn: ID_RESULTADO
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_LAST_FLAG
+		dataType: int64
+		formatString: 0
+		lineageTag: 049d29de-f45e-4d4d-92d8-9b589988f7c5
+		summarizeBy: sum
+		sourceColumn: ID_LAST_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column AGENDAMENTO_MULTIPLO
+		dataType: int64
+		formatString: 0
+		lineageTag: d0536f72-8e1e-470d-8d8c-5f64d7ce944f
+		summarizeBy: sum
+		sourceColumn: AGENDAMENTO_MULTIPLO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATA = DATE(YEAR('chatbot_V2 OMNI_CONVERSA'[DATETIME_CONVERSA]), MONTH('chatbot_V2 OMNI_CONVERSA'[DATETIME_CONVERSA]), DAY('chatbot_V2 OMNI_CONVERSA'[DATETIME_CONVERSA]))
+		formatString: General Date
+		lineageTag: 07769bf8-33b3-43ec-812c-8f1b36ebcada
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'chatbot_V2 OMNI_CONVERSA' = m
+		mode: import
+		source =
+				let
+				    Fonte = MySQL.Database("ls-a04f607f671036498978461f305b5a1f06f691d7.ckr1nz432eyx.us-east-2.rds.amazonaws.com", "chatbot_V2", [ReturnSingleDatabase=true]),
+				    chatbot_V2_OMNI_CONVERSA = Fonte{[Schema="chatbot_V2",Item="OMNI_CONVERSA"]}[Data]
+				in
+				    chatbot_V2_OMNI_CONVERSA
+
+	annotation PBI_ResultType = Table
+

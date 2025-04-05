@@ -1,0 +1,68 @@
+table POS_VENDAS_AVALIACAO
+	lineageTag: 77032282-b720-4deb-ab2c-c8fa096676d9
+
+	column TELEFONE
+		dataType: int64
+		formatString: 0
+		lineageTag: 6608dcac-e5e2-44e1-9e5b-1890659a4a61
+		summarizeBy: none
+		sourceColumn: TELEFONE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATA_COMPRA
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 99f8d183-1b9d-4db2-a25d-e218e525ed86
+		summarizeBy: none
+		sourceColumn: DATA_COMPRA
+
+		variation Variation
+			isDefault
+			relationship: 00865301-dcb6-4d23-b0e8-9a116d3584fe
+			defaultHierarchy: LocalDateTable_00307a31-34d4-478f-97b8-6db2de79e210.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_CAMPANHA
+		dataType: int64
+		formatString: 0
+		lineageTag: 0a7fb001-1b50-480f-8adc-e031386665de
+		summarizeBy: sum
+		sourceColumn: ID_CAMPANHA
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOTA
+		dataType: int64
+		formatString: 0
+		lineageTag: 94e3bb87-89ef-4313-bdc2-9e85ebc5bf56
+		summarizeBy: sum
+		sourceColumn: NOTA
+
+		annotation SummarizationSetBy = Automatic
+
+	column Data = DATE(YEAR(POS_VENDAS_AVALIACAO[DATA_COMPRA]),MONTH(POS_VENDAS_AVALIACAO[DATA_COMPRA]),DAY(POS_VENDAS_AVALIACAO[DATA_COMPRA]))
+		formatString: General Date
+		lineageTag: 5db9df9f-1bb1-4483-8da7-a9f731284393
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: 5c0873f7-2ca2-42f3-ab63-82cc9c12a494
+			defaultHierarchy: LocalDateTable_c7215f4f-603a-4968-94b5-d084f224ce9a.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition POS_VENDAS_AVALIACAO = m
+		mode: import
+		source =
+				let
+				    Fonte = MySQL.Database("ls-a04f607f671036498978461f305b5a1f06f691d7.ckr1nz432eyx.us-east-2.rds.amazonaws.com:3306", "chatbot_V2", [ReturnSingleDatabase=true, Query="SELECT * FROM POS_VENDAS_AVALIACAO;", CreateNavigationProperties=false])
+				in
+				    Fonte
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+

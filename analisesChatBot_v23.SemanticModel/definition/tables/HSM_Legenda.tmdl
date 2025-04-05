@@ -1,0 +1,25 @@
+table HSM_Legenda
+	lineageTag: 12d3d542-edd1-48b2-aab2-a57b93f81e31
+
+	column ID_HSM
+		lineageTag: 030b3b24-f592-40ef-90eb-d18ebcb73df4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: chatbot_V2 HSM[ID_HSM]
+
+		annotation SummarizationSetBy = Automatic
+
+	column LEGENDA
+		lineageTag: f417b691-f444-4a7b-838a-985f5c2f6475
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [LEGENDA]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition HSM_Legenda = calculated
+		mode: import
+		source = UNION(SUMMARIZE('chatbot_V2 HSM','chatbot_V2 HSM'[ID_HSM],"LEGENDA",'chatbot_V2 HSM'[ID_HSM]), SUMMARIZE('chatbot_V2 HSM','chatbot_V2 HSM'[ID_HSM],"LEGENDA","GERAL"))
+
+	annotation PBI_Id = 3c39d10be2494b088476ff8caea002f0
+

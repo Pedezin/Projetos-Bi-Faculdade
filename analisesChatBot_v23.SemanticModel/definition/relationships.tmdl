@@ -1,0 +1,343 @@
+relationship eb3b861c-52c1-4eb9-9b1d-637feb98534a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'chatbot_V2 CAMP_AGENDAMENTO'.DATA
+	toColumn: LocalDateTable_601ea21f-32bd-4415-98a7-50084e609d31.Date
+
+relationship 46d12484-1367-4038-a028-97c7cb11e9ee
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'chatbot_V2 CONVERSA'.ID_HSM
+	toColumn: 'chatbot_V2 HSM'.ID_HSM
+
+relationship bec4799d-21ff-4f0b-867c-5ed093738d2a
+	fromColumn: 'chatbot_V2 CONVERSA'.TELEFONE
+	toColumn: 'chatbot_V2 CONTATO'.TELEFONE
+
+relationship 0b1e180a-2efd-4d4e-9f86-435129c27da9
+	crossFilteringBehavior: bothDirections
+	securityFilteringBehavior: bothDirections
+	fromColumn: 'chatbot_V2 CONVERSA'.TELEFONE
+	toColumn: 'chatbot_V2 CAMP_AGENDAMENTO'.TELEFONE
+
+relationship cb9ca966-f168-4f8a-b8e9-4d0f75f1c0d3
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'chatbot_V2 CAMP_AGENDAMENTO'.UNIDADE_PSD
+	toColumn: EnderecoFranquias.grupoFranquia
+
+relationship 9357022c-e57d-450a-84f7-37f1f7a1d1d1
+	crossFilteringBehavior: bothDirections
+	fromColumn: EnderecoFranquias.estadoFranquia
+	toColumn: UF.Sigla
+
+relationship b469c8a6-0a59-4053-92ad-20278c32887b
+	crossFilteringBehavior: bothDirections
+	fromColumn: HSM_Legenda.ID_HSM
+	toColumn: 'chatbot_V2 HSM'.ID_HSM
+
+relationship 4861c2d3-be49-40fd-a72d-ea571a8e2279
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'chatbot_V2 FLAG_HISTORICO'.DATETIME_CONVERSA
+	toColumn: LocalDateTable_ef447c98-efd1-4571-a3d3-446b17049a6d.Date
+
+relationship 40cd27d2-bada-408c-ad9b-972e1ba0d39a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'chatbot_V2 FLAG_HISTORICO'.DATETIME_FLAG
+	toColumn: LocalDateTable_ad48466f-3c5a-482d-ab14-5fe5d1bbcfb3.Date
+
+relationship d5a9704b-66f5-409f-bd94-d8a880e4b067
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'chatbot_V2 CONTATO'.TELEFONE
+	toColumn: 'chatbot_V2 CAMP_AGENDAMENTO'.TELEFONE
+
+	annotation PBI_IsFromSource = FS
+
+relationship 21ae9cd5-1d42-4095-b2df-f397b847c8ae
+	toCardinality: many
+	fromColumn: 'chatbot_V2 CONVERSA'.ID_RESULTADO
+	toColumn: RESULTADOS_CLUSTER.ID_RESULTADO
+
+relationship 70a821ca-e68f-45fc-ac53-9521ea2eb6bd
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'chatbot_V2 HSM'.ATUALIZADO_EM
+	toColumn: LocalDateTable_8c480fbd-0fad-43c7-a60c-d85ccfc3d7d5.Date
+
+relationship d0f8c6f2-296c-4585-8495-e5aac298bc19
+	fromColumn: campanha_api.id_campanha
+	toColumn: 'chatbot_V2 CAMPANHA'.ID_CAMPANHA
+
+relationship a13bbff5-9b67-4c9e-a1ea-ce326f4d4773
+	fromColumn: 'chatbot_V2 CONVERSA'.ID_CAMPANHA
+	toColumn: 'chatbot_V2 CAMPANHA'.ID_CAMPANHA
+
+relationship ec019046-99bb-4c3f-9df5-448d17db9603
+	fromColumn: 'chatbot_V2 CONVERSA'.DATA
+	toColumn: CALENDARIO.Date
+
+relationship 120f6831-55d3-4cfc-9383-205e289176ad
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'chatbot_V2 CONVERSA'.DATETIME_CONVERSA
+	toColumn: LocalDateTable_45b5f7c8-d182-4a9b-8325-5f06b5698700.Date
+
+relationship c0a23ee9-d15c-4bb9-bb61-cddf707807db
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'chatbot_V2 HSM'.TIPOLOGIA
+	toColumn: HSM_CUSTO.TIPOLOGIA
+
+relationship 53df1615-8f1c-4cf1-8255-a539d5c38548
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'chatbot_V2 OMNI_FLAG_HISTORICO'.DATETIME_CONVERSA
+	toColumn: LocalDateTable_37215822-168d-47bc-bc70-ff7a44196163.Date
+
+relationship 4369a2bd-e3f9-4e85-a732-c1aa0039e45a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'chatbot_V2 OMNI_FLAG_HISTORICO'.DATETIME_FLAG
+	toColumn: LocalDateTable_fadbc432-437f-4286-94cc-c943b05229d5.Date
+
+relationship 94445721-846d-4fa3-8096-33560717b4dc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'chatbot_V2 OMNI_MENSAGEM'.DATETIME_CONVERSA
+	toColumn: LocalDateTable_85e50610-71db-4b79-a297-f08bddd0d843.Date
+
+relationship 45411d54-ea5f-4f87-b138-09e943062cf8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'chatbot_V2 OMNI_MENSAGEM'.MENSAGEM_DATETIME
+	toColumn: LocalDateTable_d5cca124-a6c7-4725-a7e4-cd29f855b4b1.Date
+
+relationship d2a01376-e183-402f-b9d2-31f412418086
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'chatbot_V2 AGENDAMENTO_REALIZADO'.DATA_AGENDAMENTO
+	toColumn: LocalDateTable_4df50dfd-cd33-44d9-97fb-65763bcbc7e9.Date
+
+relationship 59e4091b-c81a-fcfa-a7c1-b781a741041a
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'chatbot_V2 CONVERSA'.TELEFONE
+	toColumn: 'chatbot_V2 AGENDAMENTO_REALIZADO'.TELEFONE
+
+relationship 0e61c818-8bfd-c67d-99c8-b4ac4cae172b
+	fromColumn: 'chatbot_V2 OMNI_CONVERSA'.ID_CONTATO
+	toColumn: 'chatbot_V2 OMNI_CONTATO'.ID_CONTATO
+
+relationship 494b1f90-3464-acb4-5236-6b2172a14694
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'chatbot_V2 OMNI_CONVERSA'.ID_CONTATO
+	toColumn: 'chatbot_V2 OMNI_MENSAGEM'.ID_CONTATO
+
+relationship 13b14577-fede-cd2d-0bbe-9f0a7be35795
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'chatbot_V2 OMNI_CONVERSA'.ID_CONTATO
+	toColumn: 'chatbot_V2 OMNI_FLAG_HISTORICO'.ID_CONTATO
+
+relationship 7c58020a-9ab1-240d-4191-06dc2a5871cd
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: OMNI_RESULTADOS_CLUSTER.ID_RESULTADO
+	toColumn: 'chatbot_V2 OMNI_CONVERSA'.ID_RESULTADO
+
+relationship fb4c884a-a8f2-492f-89cf-1e943fc25e36
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CALENDARIO.Date
+	toColumn: LocalDateTable_640c0642-bfc1-45c6-9da1-eb2e9d508732.Date
+
+relationship a060ff2c-011a-4c4f-8bed-0abca37f0397
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'chatbot_V2 OMNI_CONVERSA'.DATETIME_CONVERSA
+	toColumn: LocalDateTable_d37111f9-bbe6-448c-b0c8-6bd8b8f1c8b4.Date
+
+relationship fe9c6adf-dac3-36d4-b9d7-edd4ab8dd88f
+	fromColumn: 'chatbot_V2 OMNI_CONVERSA'.DATA
+	toColumn: CALENDARIO.Date
+
+relationship 30b3648b-6ec9-1672-6d33-86c1be74003f
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'chatbot_V2 AGENDAMENTO_REALIZADO'.TELEFONE
+	toColumn: 'chatbot_V2 FLAG_HISTORICO'.TELEFONE
+
+relationship 8c6e59fd-97dc-f202-9c3d-9fe175725aa0
+	isActive: false
+	fromColumn: 'chatbot_V2 FLAG_HISTORICO'.DATA
+	toColumn: CALENDARIO.Date
+
+relationship ca331a56-c989-e48d-d99d-acffe8dac39b
+	fromColumn: 'Verificacao Disparo Real'.'Data Real'
+	toColumn: CALENDARIO.Date
+
+relationship 985397ea-b253-45ec-b212-577c4b188679
+	fromColumn: 'chatbot_V2 CONVERSA'.ID_REMARKETING
+	toColumn: 'chatbot_V2 REMARKETING'.ID_REMARKETING
+
+	annotation PBI_IsFromSource = FS
+
+relationship 4bc642f2-9546-43e9-70a8-0cc9a3748038
+	fromColumn: omni_df.Data_contato
+	toColumn: CALENDARIO.Date
+
+relationship e3fc2d43-d14e-22fa-8d9f-7314514eaad7
+	fromColumn: omni_df.Campanha
+	toColumn: 'chatbot_V2 CAMPANHA'.NOME_CAMPANHA
+
+relationship 1784e48e-416f-4fb8-8711-1cf0fd587979
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'chatbot_V2 CAMP_LANDING_PAGE'.DATETIME_CONVERSA
+	toColumn: LocalDateTable_cb09467d-4f8f-4ec6-93a4-162b043ea111.Date
+
+relationship 907b9712-ff6a-45be-2fc5-2e8b017d927c
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'chatbot_V2 CAMP_LANDING_PAGE'.TELEFONE
+	toColumn: 'chatbot_V2 CONVERSA'.TELEFONE
+
+relationship 4367dfc3-05ce-e2f3-adf8-ff4c707dd58e
+	fromColumn: 'chatbot_V2 CAMP_LANDING_PAGE'.ID_SUBCAMPANHA
+	toColumn: 'chatbot_V2 LANDING_PAGE'.ID_SUBCAMPANHA
+
+relationship d5dc6dbc-de58-4b8b-81bf-85faa2eeb583
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Mensagem_HSM.DATETIME_CONVERSA
+	toColumn: LocalDateTable_a3a76fdf-2481-4f41-bc36-6085c790b6d2.Date
+
+relationship 6e7657eb-0403-4ba4-8fa9-1f6e0fdd0ed1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Mensagem_HSM.MENSAGEM_DATETIME
+	toColumn: LocalDateTable_a113492c-e285-4598-bc52-118897747c14.Date
+
+relationship 22663dfc-40f2-2f59-7df8-afecac79e236
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: Mensagem_HSM.TELEFONE
+	toColumn: 'chatbot_V2 CONVERSA'.TELEFONE
+
+relationship af321a96-2bb1-f48e-abd6-7a28a0332e76
+	fromColumn: TabelaInsistências.Campanha
+	toColumn: 'chatbot_V2 CAMPANHA'.ID_CAMPANHA
+
+relationship d21ed85d-aed8-3b25-6903-1bb4f3e764d8
+	fromColumn: Mensagem_HSM.Key
+	toColumn: TabelaInsistências.Key
+
+relationship f1a42e65-12cc-4065-bc7b-bac7ae48db57
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Flag_repescagem.DATETIME_CONVERSA
+	toColumn: LocalDateTable_302cd47c-0c1a-4082-ab59-fa1fb4dc4f22.Date
+
+relationship 971001a5-a4ef-46b9-af21-a49c1720ea52
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Flag_repescagem.DATETIME_FLAG
+	toColumn: LocalDateTable_eb469a1e-f216-4fa7-b312-7fc7084e93f5.Date
+
+relationship ea88da12-c855-947a-0551-950137c65f61
+	fromColumn: Flag_repescagem.Key
+	toColumn: TabelaRepescagem.Key
+
+relationship 35c1fa50-11e5-c96d-06cc-79699168faa2
+	fromColumn: TabelaRepescagem.Campanha
+	toColumn: 'chatbot_V2 CAMPANHA'.ID_CAMPANHA
+
+relationship 06fba4c6-75e1-e449-445f-4515e6bc3f4d
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: Flag_repescagem.TELEFONE
+	toColumn: 'chatbot_V2 CONVERSA'.TELEFONE
+
+relationship 67c9ffe8-4036-6c1a-8f29-83dbe8a21dfc
+	fromColumn: Flag_AUX.Last_Date
+	toColumn: CALENDARIO.Date
+
+relationship 2574e241-379f-48b2-96cf-04e77bfde305
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Flag_AUX.Data_Agendada
+	toColumn: LocalDateTable_2021c061-434d-4dc1-b42d-f9c8c627971c.Date
+
+relationship 992478f1-8905-4609-aa8b-9515b27c5d08
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Unidade_Agenda.Data_Agendada
+	toColumn: LocalDateTable_ab9c1f4f-e3f6-4614-990f-04d4f4783f38.Date
+
+relationship 12a2ce87-c6a5-76f5-7f6e-ebbf4cd8f7f8
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: Unidade_Agenda.TELEFONE
+	toColumn: 'chatbot_V2 CONVERSA'.TELEFONE
+
+relationship 6f0e48af-0fbf-42e9-b94a-deade8b80dd9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Consulta1.DATETIME_CONVERSA
+	toColumn: LocalDateTable_9febc710-34dd-47ff-8c52-f6b380e04501.Date
+
+relationship bcfe464f-d66c-7d2d-d28b-6a9b6bfbc637
+	fromColumn: Consulta1.Data
+	toColumn: CALENDARIO.Date
+
+relationship d5460e9a-d53b-d7b6-35b0-b439c6c78c78
+	fromColumn: Flows_Unico.Campanha
+	toColumn: 'chatbot_V2 CAMPANHA'.ID_CAMPANHA
+
+relationship 8ecca342-a85f-aec6-769f-6f3f9e62fb28
+	fromColumn: Flows_Unico.MaxData
+	toColumn: CALENDARIO.Date
+
+relationship ee8e8808-87d9-8666-b415-8b9f24039dd3
+	fromColumn: df.api_key_name
+	toColumn: campanha_api.api_key
+
+relationship 89bdb635-7fd9-bef1-b892-eae3a9fe9525
+	fromColumn: df.data
+	toColumn: CALENDARIO.Date
+
+relationship b662d541-6848-6909-5f98-5ecbc21d8023
+	fromColumn: df.model
+	toColumn: modelos.modelo
+
+relationship 2a6222db-1cba-978e-8b0c-8c7f4e558798
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: historico_cotacao_dolar.data
+	toColumn: CALENDARIO.Date
+
+relationship c10753ec-5674-4abe-90ff-567d71a0d341
+	joinOnDateBehavior: datePartOnly
+	fromColumn: POS_VENDAS_INDICACAO.DATA_COMPRA
+	toColumn: LocalDateTable_c932bf8c-27e7-4bdf-963c-6716c1605875.Date
+
+relationship 00865301-dcb6-4d23-b0e8-9a116d3584fe
+	joinOnDateBehavior: datePartOnly
+	fromColumn: POS_VENDAS_AVALIACAO.DATA_COMPRA
+	toColumn: LocalDateTable_00307a31-34d4-478f-97b8-6db2de79e210.Date
+
+relationship 9e30d079-9b33-46cd-9062-14750a1a4594
+	joinOnDateBehavior: datePartOnly
+	fromColumn: POS_VENDAS_INDICACAO.Data
+	toColumn: LocalDateTable_c472f992-6ede-4c78-911b-f4a1245fede8.Date
+
+relationship 5c0873f7-2ca2-42f3-ab63-82cc9c12a494
+	joinOnDateBehavior: datePartOnly
+	fromColumn: POS_VENDAS_AVALIACAO.Data
+	toColumn: LocalDateTable_c7215f4f-603a-4968-94b5-d084f224ce9a.Date
+
+relationship c7f6ecf9-cc8b-4735-873e-7b9d16e5a1e1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CAMP_POS_VENDAS.DATA_COMPRA
+	toColumn: LocalDateTable_2f3c7c7f-52eb-4aa2-af78-66e0c487b0c2.Date
+
+relationship df464000-c8e4-dce6-2bbe-f59f8b02ffb6
+	fromColumn: 'chatbot_V2 CONVERSA'.TELEFONE
+	toColumn: CAMP_POS_VENDAS.TELEFONE
+
+relationship 744cfbe6-7cc4-c489-0eff-def935507484
+	fromColumn: POS_VENDAS_AVALIACAO.TELEFONE
+	toColumn: CAMP_POS_VENDAS.TELEFONE
+
+relationship 2cef6ddf-182f-43d7-5b1f-153cd304edf4
+	toCardinality: many
+	fromColumn: POS_VENDAS_AVALIACAO.TELEFONE
+	toColumn: 'chatbot_V2 CONVERSA'.TELEFONE
+
+relationship e8ee0007-7794-e013-2b9c-571dc9a7d9b7
+	toCardinality: many
+	fromColumn: POS_VENDAS_INDICACAO.TELEFONE
+	toColumn: POS_VENDAS_AVALIACAO.TELEFONE
+
